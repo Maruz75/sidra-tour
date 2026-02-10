@@ -77,10 +77,13 @@ const features = [
 		<section id="beranda" class="hero">
 			<div class="hero-overlay"></div>
 			<div class="container hero-content">
-				<span class="badge">Travel Umroh Terpercaya</span>
+				<div class="hashtag-container">
+					<span class="hashtag">#UmrohTanpaGimik</span>
+				</div>
 				<h1>
 					Menuju Baitullah dengan <br /><span class="text-gradient"
-						>Hati yang Tenang</span>
+						>Hati yang Tenang</span
+					>
 				</h1>
 				<p>
 					Fokuskan hati Anda untuk beribadah. Biarkan kami yang
@@ -235,19 +238,27 @@ const features = [
 		text-align: center;
 	}
 
-	.badge {
-		background: rgba(255, 255, 255, 0.2);
-		padding: 0.5rem 1rem;
-		border-radius: 2rem;
-		font-size: 0.9rem;
-		font-weight: 500;
-		letter-spacing: 0.05em;
-		text-transform: uppercase;
-		backdrop-filter: blur(5px);
-		border: 1px solid rgba(255, 255, 255, 0.3);
+	.hashtag-container {
 		margin-bottom: 1.5rem;
+		animation: fadeInDown 1s ease-out;
+	}
+
+	.hashtag {
+		background: rgba(255, 255, 255, 0.1);
+		backdrop-filter: blur(10px);
+		border: 2px solid var(--color-accent);
+		color: var(--color-accent);
+		padding: 0.75rem 1.5rem;
+		border-radius: 3rem;
+		font-size: 1.25rem;
+		font-weight: 700;
+		letter-spacing: 0.05em;
+		box-shadow: 0 0 20px rgba(217, 119, 6, 0.3);
+		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 		display: inline-block;
 	}
+
+	/* .badge removed */
 
 	.hero h1 {
 		font-size: 3.5rem;
