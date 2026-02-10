@@ -1,0 +1,43 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Welcome from "../components/Welcome.astro";
+---
+
+<Layout
+	title="Astro SEO Starter - Landing Page"
+	description="This is a sample landing page demonstrating SEO features in Astro."
+>
+	<main>
+		<h1>Welcome to Astro SEO Starter</h1>
+		<p class="intro">
+			Check the source code (View Page Source) to see the generated meta
+			tags!
+		</p>
+		<Welcome />
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	h1 {
+		font-size: 4rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 0.5em;
+	}
+	.intro {
+		text-align: center;
+		margin-bottom: 2rem;
+		font-style: italic;
+		color: #ccc;
+	}
+</style>
