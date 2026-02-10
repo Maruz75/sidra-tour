@@ -1,43 +1,489 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Welcome from "../components/Welcome.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
+const packages = [
+	{
+		title: "Paket Reguler",
+		price: "28.5 Jt",
+		duration: "9 Hari",
+		hotel: "Bintang 4",
+		features: [
+			"Penerbangan Direct",
+			"Hotel Dekat Masjid",
+			"Makan 3x Sehari",
+			"City Tour Madinah & Mekkah",
+			"Muthawif Berpengalaman",
+		],
+		highlight: false,
+	},
+	{
+		title: "Paket VIP",
+		price: "35.5 Jt",
+		duration: "9 Hari",
+		hotel: "Bintang 5",
+		features: [
+			"Penerbangan Direct Saudi/Garuda",
+			"Hotel Depan Pelataran",
+			"Makan Menu Indonesia",
+			"City Tour VIP",
+			"Upgrade Kamar",
+		],
+		highlight: true,
+	},
+	{
+		title: "Paket Ramadhan",
+		price: "42.5 Jt",
+		duration: "12 Hari",
+		hotel: "Bintang 5",
+		features: [
+			"Awal/Tengah/Akhir Ramadhan",
+			"Ibadah Tarawih di Masjidil Haram",
+			"Fullboard Hotel",
+			"Pembimbing Ibadah Khusus",
+		],
+		highlight: false,
+	},
+];
+
+const features = [
+	{
+		icon: "✨",
+		title: "Tanpa Gimik",
+		desc: "Harga yang Anda bayar adalah harga final. Tidak ada biaya tersembunyi atau tambahan mendadak.",
+	},
+	{
+		icon: "🤝",
+		title: "Sesuai Sunnah",
+		desc: "Bimbingan ibadah sesuai tuntunan Nabi Muhammad SAW oleh Ustadz berpengalaman.",
+	},
+	{
+		icon: "🏨",
+		title: "Fasilitas Terjamin",
+		desc: "Kepastian hotel dan maskapai penerbangan sejak awal pendaftaran.",
+	},
+];
 ---
 
 <Layout
-	title="Astro SEO Starter - Landing Page"
-	description="This is a sample landing page demonstrating SEO features in Astro."
+	title="Sidra Tour - Travel Umroh Tanpa Gimik"
+	description="Nikmati perjalanan ibadah Umroh yang khusyuk, nyaman, dan transparan bersama Sidra Tour."
 >
+	<Navbar />
+
 	<main>
-		<h1>Welcome to Astro SEO Starter</h1>
-		<p class="intro">
-			Check the source code (View Page Source) to see the generated meta
-			tags!
-		</p>
-		<Welcome />
+		<!-- Hero Section -->
+		<section id="beranda" class="hero">
+			<div class="hero-overlay"></div>
+			<div class="container hero-content">
+				<span class="badge">Travel Umroh Terpercaya</span>
+				<h1>
+					Menuju Baitullah dengan <br /><span class="text-gradient"
+						>Hati yang Tenang</span>
+				</h1>
+				<p>
+					Fokuskan hati Anda untuk beribadah. Biarkan kami yang
+					mengurus segala kebutuhan perjalanan Anda dengan transparan
+					dan amanah.
+				</p>
+				<div class="hero-buttons">
+					<a href="#paket" class="btn btn-primary btn-lg"
+						>Lihat Paket Umroh</a
+					>
+					<a
+						href="https://wa.me/6281234567890"
+						class="btn btn-outline btn-lg">Konsultasi Gratis</a
+					>
+				</div>
+			</div>
+		</section>
+
+		<!-- Features Section -->
+		<section id="tentang" class="features">
+			<div class="container">
+				<div class="section-header text-center">
+					<h2>Mengapa Memilih Sidra Tour?</h2>
+					<p>
+						Kami berkomitmen memberikan pelayanan terbaik demi
+						kekhusyukan ibadah Anda.
+					</p>
+				</div>
+				<div class="features-grid">
+					{
+						features.map((feature) => (
+							<div class="feature-card">
+								<div class="feature-icon">{feature.icon}</div>
+								<h3>{feature.title}</h3>
+								<p>{feature.desc}</p>
+							</div>
+						))
+					}
+				</div>
+			</div>
+		</section>
+
+		<!-- Packages Section -->
+		<section id="paket" class="packages">
+			<div class="container">
+				<div class="section-header text-center">
+					<h2>Pilihan Paket Umroh</h2>
+					<p>Sesuaikan dengan kebutuhan dan kenyamanan Anda.</p>
+				</div>
+				<div class="packages-grid">
+					{
+						packages.map((pkg) => (
+							<div
+								class={`package-card ${pkg.highlight ? "highlight" : ""}`}
+							>
+								{pkg.highlight && (
+									<div class="popular-tag">Terlaris</div>
+								)}
+								<div class="package-header">
+									<h3>{pkg.title}</h3>
+									<div class="price">Rp {pkg.price}</div>
+									<span class="duration">{pkg.duration}</span>
+								</div>
+								<ul class="package-features">
+									{pkg.features.map((feat) => (
+										<li>
+											<svg
+												class="check-icon"
+												viewBox="0 0 20 20"
+												fill="currentColor"
+											>
+												<path
+													fill-rule="evenodd"
+													d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+													clip-rule="evenodd"
+												/>
+											</svg>
+											{feat}
+										</li>
+									))}
+								</ul>
+								<div class="package-footer">
+									<a
+										href="https://wa.me/6281234567890?text=Saya%20tertarik%20dengan%20paket%20"
+										class={`btn ${pkg.highlight ? "btn-primary" : "btn-outline"} btn-block`}
+									>
+										Pilih Paket
+									</a>
+								</div>
+							</div>
+						))
+					}
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA Section -->
+		<section id="kontak" class="cta">
+			<div class="container cta-container">
+				<div class="cta-content">
+					<h2>Siap Menjadi Tamu Allah?</h2>
+					<p>
+						Jangan tunda niat baik Anda. Segera daftarkan diri dan
+						keluarga sekarang juga. Kursi terbatas!
+					</p>
+					<a
+						href="https://wa.me/6281234567890"
+						class="btn btn-accent btn-lg"
+						>Hubungi Kami via WhatsApp</a
+					>
+				</div>
+			</div>
+		</section>
 	</main>
+
+	<Footer />
 </Layout>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
+	/* Hero Section */
+	.hero {
+		position: relative;
+		height: 90vh;
+		display: flex;
+		align-items: center;
+		background-image: url("https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?q=80&w=1600&auto=format&fit=crop"); /* Mecca Image */
+		background-size: cover;
+		background-position: center;
 		color: white;
-		font-size: 20px;
-		line-height: 1.6;
+		overflow: hidden;
 	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
+
+	.hero-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(
+			to bottom,
+			rgba(4, 120, 87, 0.8),
+			rgba(6, 78, 59, 0.9)
+		);
+		z-index: 1;
+	}
+
+	.hero-content {
+		position: relative;
+		z-index: 2;
+		max-width: 800px;
+		margin: 0 auto;
 		text-align: center;
-		margin-bottom: 0.5em;
 	}
-	.intro {
+
+	.badge {
+		background: rgba(255, 255, 255, 0.2);
+		padding: 0.5rem 1rem;
+		border-radius: 2rem;
+		font-size: 0.9rem;
+		font-weight: 500;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		backdrop-filter: blur(5px);
+		border: 1px solid rgba(255, 255, 255, 0.3);
+		margin-bottom: 1.5rem;
+		display: inline-block;
+	}
+
+	.hero h1 {
+		font-size: 3.5rem;
+		line-height: 1.2;
+		margin-bottom: 1.5rem;
+		color: white;
+	}
+
+	.text-gradient {
+		background: linear-gradient(to right, #fbbf24, #d97706);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	.hero p {
+		font-size: 1.25rem;
+		color: #e5e7eb;
+		margin-bottom: 2.5rem;
+		max-width: 600px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.hero-buttons {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+	}
+
+	.btn-lg {
+		padding: 1rem 2rem;
+		font-size: 1.1rem;
+	}
+
+	.btn-outline {
+		background: transparent;
+		border: 2px solid white;
+		color: white;
+	}
+
+	.btn-outline:hover {
+		background: white;
+		color: var(--color-primary-dark);
+	}
+
+	/* Features Section */
+	.features {
+		padding: 6rem 0;
+		background: white;
+	}
+
+	.section-header {
+		text-align: center;
+		margin-bottom: 4rem;
+	}
+
+	.section-header h2 {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.section-header p {
+		font-size: 1.1rem;
+		color: #6b7280;
+	}
+
+	.features-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+	}
+
+	.feature-card {
+		padding: 2rem;
+		border-radius: 1rem;
+		background: #f9fafb;
+		border: 1px solid #e5e7eb;
+		transition: all 0.3s ease;
+		text-align: center;
+	}
+
+	.feature-card:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+		border-color: var(--color-primary);
+	}
+
+	.feature-icon {
+		font-size: 3rem;
+		margin-bottom: 1.5rem;
+		background: #ecfdf5;
+		width: 80px;
+		height: 80px;
+		line-height: 80px;
+		border-radius: 50%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.feature-card h3 {
+		margin-bottom: 1rem;
+		color: var(--color-primary-dark);
+		font-size: 1.5rem;
+	}
+
+	/* Packages Section */
+	.packages {
+		padding: 6rem 0;
+		background: #f0fdf4;
+	}
+
+	.packages-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		gap: 2rem;
+		align-items: flex-start;
+	}
+
+	.package-card {
+		background: white;
+		border-radius: 1.5rem;
+		padding: 2.5rem;
+		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+		position: relative;
+		border: 1px solid #e5e7eb;
+		transition: all 0.3s ease;
+	}
+
+	.package-card.highlight {
+		border: 2px solid var(--color-accent);
+		transform: scale(1.05);
+		z-index: 10;
+		box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+	}
+
+	.popular-tag {
+		position: absolute;
+		top: -12px;
+		left: 50%;
+		transform: translateX(-50%);
+		background: var(--color-accent);
+		color: white;
+		padding: 0.25rem 1rem;
+		border-radius: 1rem;
+		font-size: 0.875rem;
+		font-weight: 600;
+	}
+
+	.package-header {
 		text-align: center;
 		margin-bottom: 2rem;
-		font-style: italic;
-		color: #ccc;
+		padding-bottom: 2rem;
+		border-bottom: 1px solid #eee;
+	}
+
+	.package-header h3 {
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+		color: #374151;
+	}
+
+	.price {
+		font-size: 2.5rem;
+		font-weight: 700;
+		color: var(--color-primary);
+		margin-bottom: 0.5rem;
+	}
+
+	.duration {
+		display: inline-block;
+		background: #ecfdf5;
+		color: var(--color-primary-dark);
+		padding: 0.25rem 0.75rem;
+		border-radius: 1rem;
+		font-size: 0.875rem;
+		font-weight: 500;
+	}
+
+	.package-features {
+		list-style: none;
+		padding: 0;
+		margin: 0 0 2rem 0;
+	}
+
+	.package-features li {
+		display: flex;
+		align-items: center;
+		margin-bottom: 1rem;
+		color: #4b5563;
+	}
+
+	.check-icon {
+		width: 1.25rem;
+		height: 1.25rem;
+		color: var(--color-primary);
+		margin-right: 0.75rem;
+		flex-shrink: 0;
+	}
+
+	.btn-block {
+		display: block;
+		width: 100%;
+	}
+
+	/* CTA Section */
+	.cta {
+		padding: 6rem 0;
+		background: var(--color-primary-dark);
+		color: white;
+		text-align: center;
+	}
+
+	.cta-content h2 {
+		color: white;
+		font-size: 2.5rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.cta-content p {
+		font-size: 1.25rem;
+		color: #d1d5db;
+		margin-bottom: 3rem;
+	}
+
+	/* Responsive */
+	@media (max-width: 768px) {
+		.hero h1 {
+			font-size: 2.5rem;
+		}
+
+		.hero-buttons {
+			flex-direction: column;
+		}
+
+		.package-card.highlight {
+			transform: none;
+		}
 	}
 </style>

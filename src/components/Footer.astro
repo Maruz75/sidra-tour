@@ -1,0 +1,98 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer">
+    <div class="container footer-container">
+        <div class="footer-brand">
+            <h3>Sidra Tour</h3>
+            <p>
+                Travel Umroh Tanpa Gimik.<br />Mengutamakan kenyamanan dan
+                kekhusyukan ibadah Anda.
+            </p>
+        </div>
+
+        <div class="footer-links">
+            <h4>Tautan</h4>
+            <a href="#beranda">Beranda</a>
+            <a href="#paket">Paket Umroh</a>
+            <a href="#tentang">Tentang Kami</a>
+        </div>
+
+        <div class="footer-contact">
+            <h4>Kontak</h4>
+            <p>Jakarta, Indonesia</p>
+            <p>info@sidratour.com</p>
+            <p>+62 812 3456 7890</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; {currentYear} Sidra Tour. All rights reserved.</p>
+    </div>
+</footer>
+
+<style>
+    .footer {
+        background-color: var(--color-primary-dark);
+        color: white;
+        padding: 4rem 0 2rem;
+        margin-top: auto;
+    }
+
+    .footer-container {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 4rem;
+        margin-bottom: 3rem;
+    }
+
+    .footer-brand h3 {
+        color: var(--color-accent);
+        margin-bottom: 1rem;
+    }
+
+    .footer-brand p {
+        color: #d1d5db;
+    }
+
+    .footer-links,
+    .footer-contact {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    h4 {
+        color: white;
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+    }
+
+    .footer-links a {
+        color: #d1d5db;
+    }
+
+    .footer-links a:hover {
+        color: white;
+    }
+
+    .footer-contact p {
+        color: #d1d5db;
+        margin-bottom: 0.25rem;
+    }
+
+    .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 2rem;
+        text-align: center;
+        color: #9ca3af;
+        font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+        .footer-container {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+    }
+</style>
