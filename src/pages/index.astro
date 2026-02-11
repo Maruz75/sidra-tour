@@ -5,40 +5,50 @@ import Footer from "../components/Footer.astro";
 
 const packages = [
 	{
-		title: "REGULER",
+		title: "PAKET 9 HARI",
+		price: "Start 28 Jutaan",
 		duration: "9 Hari",
-		hotel: "Bintang 4",
 		features: [
-			"Direct Flight",
+			"Start Jakarta",
 			"Hotel Dekat Masjid",
-			"Makan 3x Sehari",
-			"City Tour",
-			"Muthawif Pro",
+			"Makan 3x Sehari (Indo)",
+			"Direct Flight",
 		],
 		highlight: false,
 	},
 	{
-		title: "VIP CLASS",
-		duration: "9 Hari",
-		hotel: "Bintang 5",
+		title: "PAKET 12 HARI",
+		price: "Start 29 Jutaan",
+		duration: "12 Hari",
 		features: [
-			"Direct Saudi/Garuda",
-			"Hotel Depan Pelataran",
-			"Menu Indonesia",
-			"Private Bus",
-			"Upgrade Kamar",
+			"Start Jakarta",
+			"Hotel Dekat Masjid",
+			"Makan 3x Sehari (Indo)",
+			"Free Kereta Cepat",
 		],
 		highlight: true,
 	},
 	{
-		title: "RAMADHAN",
-		duration: "12 Hari",
-		hotel: "Bintang 5",
+		title: "PAKET RAMADHAN",
+		price: "Start 35 Jutaan",
+		duration: "End of Ramadhan",
 		features: [
 			"Full Ramadhan",
-			"Tarawih Masjidil Haram",
+			"Tarawih di Haram",
 			"Fullboard Hotel",
 			"Pembimbing Khusus",
+		],
+		highlight: false,
+	},
+	{
+		title: "PAKET SYAWAL",
+		price: "Start 26 Jutaan",
+		duration: "9 Hari",
+		features: [
+			"Suasana Syawal",
+			"Cuaca Sejuk",
+			"Hotel Dekat Masjid",
+			"Start Jakarta",
 		],
 		highlight: false,
 	},
@@ -121,24 +131,38 @@ const features = [
 				</h2>
 				<div class="problem-grid">
 					<div class="problem-card">
-						<div class="icon">🛍️</div>
+						<img
+							src="/Jamaah%20umroh%20di%20kaabah.jpg"
+							alt="Jamaah kecapekan belanja"
+							class="problem-img"
+							loading="lazy"
+						/>
 						<h3>KEBANYAKAN SHOPPING</h3>
 						<p>
 							Niat hati mau khusyuk, malah diajak keliling toko
-							oleh-oleh seharian. Capek di jalan, waktu ibadah
-							habis.
+							oleh-oleh seharian. Capek di jalan, waktu umroh malah capek.
 						</p>
 					</div>
 					<div class="problem-card">
-						<div class="icon">🐪</div>
+						<img
+							src="/jamaah%20umroh%20unta.jpg"
+							alt="Bosan city tour"
+							class="problem-img"
+							loading="lazy"
+						/>
 						<h3>CITY TOUR GA PENTING</h3>
 						<p>
-							Ke peternakan unta, ke museum ini itu. Padahal hati
-							cuma ingin tenang itikaf di Masjidil Haram & Nabawi.
+							Ke peternakan unta, ke museum ini itu. Padahal
+							cuma pengen tenang ibadah di Masjidil Haram & Nabawi.
 						</p>
 					</div>
 					<div class="problem-card">
-						<div class="icon">🏃</div>
+						<img
+							src="/Jamaah%20umroh%20di%20bus.jpg"
+							alt="Sedih ketinggalan sholat"
+							class="problem-img"
+							loading="lazy"
+						/>
 						<h3>SHOLAT KETETERAN</h3>
 						<p>
 							Sering telat ke masjid gara-gara macet pas city tour
@@ -211,7 +235,7 @@ const features = [
 					>
 				</h2>
 
-				<div class="packages-stack">
+				<div class="packages-grid">
 					{
 						packages.map((pkg, i) => (
 							<div
@@ -246,26 +270,13 @@ const features = [
 									<div class="ticket-header">
 										<span class="pkg-type">UMROH TRIP</span>
 										<h3>{pkg.title}</h3>
+										<div class="pkg-price">{pkg.price}</div>
 									</div>
 									<div class="ticket-body">
-										<div class="info-row">
-											<span class="label">DURASI</span>
-											<span class="value">
-												{pkg.duration}
-											</span>
-										</div>
-										<div class="info-row">
-											<span class="label">HOTEL</span>
-											<span class="value">
-												{pkg.hotel}
-											</span>
-										</div>
 										<div class="features-list">
-											{pkg.features
-												.slice(0, 3)
-												.map((f) => (
-													<span>• {f}</span>
-												))}
+											{pkg.features.map((f) => (
+												<span>✓ {f}</span>
+											))}
 										</div>
 									</div>
 								</div>
@@ -274,7 +285,7 @@ const features = [
 										href="https://wa.me/6281234567890"
 										class="btn-book"
 									>
-										BOOK NOW
+										BOOK
 									</a>
 								</div>
 							</div>
@@ -662,20 +673,30 @@ const features = [
 		color: var(--neon-lime);
 	}
 
-	.packages-stack {
-		display: flex;
-		flex-direction: column;
-		gap: 1.5rem; /* Reduced gap */
+	.packages-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 2rem;
+		max-width: 1200px; /* Increased width */
+		margin: 0 auto;
+	}
+
+	@media (min-width: 900px) {
+		.packages-grid {
+			grid-template-columns: 1fr 1fr;
+		}
 	}
 
 	.ticket-card {
 		display: flex;
-		background: var(--off-white);
-		color: var(--deep-slate);
-		border-radius: 0.75rem; /* Slightly smaller radius */
+		background: #fff;
+		border: 3px solid var(--deep-slate);
+		border-radius: 1rem;
 		overflow: hidden;
-		min-height: 160px; /* Reduced height */
+		box-shadow: 8px 8px 0px var(--neon-lime);
+		transition: transform 0.2s;
 		position: relative;
+		min-height: 250px; /* Taller for information */
 	}
 
 	.ticket-left {
@@ -717,10 +738,10 @@ const features = [
 		transform: rotate(180deg);
 		font-size: 0.65rem;
 		font-weight: 800;
-		color: var(--off-white); /* Contrast against dark background */
+		color: rgba(0,0,0,0.3); /* Subtle dark on light bg */
 		letter-spacing: 0.1em;
 		padding: 1rem 0;
-		border-left: 1px dashed rgba(255,255,255,0.3);
+		border-left: 1px dashed var(--deep-slate);
 		margin-left: 0.5rem;
 		display: flex;
 		align-items: center;
@@ -777,57 +798,57 @@ const features = [
 	}
 
 	.ticket-content h3 {
-		font-size: clamp(1.5rem, 3vw, 2.25rem); /* Reduced title size */
+		font-size: 1.5rem;
 		font-weight: 900;
-		margin: 0 0 1rem 0;
-		line-height: 1;
+		margin: 0;
+		line-height: 1.1;
+		color: var(--deep-slate);
+	}
+
+	.pkg-price {
+		font-size: 1.25rem;
+		font-weight: 900;
+		color: var(--color-primary); /* Use primary color or red */
+		background: var(--neon-lime);
+		display: inline-block;
+		padding: 0 0.5rem;
+		transform: rotate(-1deg);
+		margin-top: 0.5rem;
+		margin-bottom: 1rem;
+		color: var(--deep-slate);
 	}
 
 	.ticket-body {
 		display: flex;
-		gap: 1.5rem;
-		flex-wrap: wrap;
-	}
-
-	.info-row {
-		display: flex;
 		flex-direction: column;
+		gap: 0.5rem;
 	}
 
-	.label {
-		font-size: 0.65rem;
-		font-weight: 700;
-		color: #64748b;
-		letter-spacing: 0.1em;
-	}
-
-	.value {
-		font-weight: 800;
-		font-size: 1rem; /* Smaller value */
-	}
+	/* Removed .info-row and .label as they are not used in new design */
 
 	.features-list {
-		display: flex;
-		gap: 0.5rem;
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 0.25rem;
+		font-size: 0.9rem;
 		font-weight: 600;
-		align-items: center;
-		flex-wrap: wrap;
+		color: var(--deep-slate);
 	}
 
 	.features-list span {
-		background: #e2e8f0;
-		padding: 0.2rem 0.6rem;
-		border-radius: 4px;
-		font-size: 0.8rem;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
 	}
 
 	.ticket-right {
-		width: 140px; /* Reduced button area width */
+		background: var(--neon-lime);
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background: var(--neon-lime);
-		padding: 1rem;
+		padding: 0.5rem;
+		border-left: 3px dashed var(--deep-slate);
+		width: 100px; /* Wider for horizontal text */
 		cursor: pointer;
 		transition: background 0.2s;
 	}
@@ -838,26 +859,15 @@ const features = [
 
 	.btn-book {
 		font-weight: 900;
-		font-size: 1.25rem; /* Smaller button text */
-		text-align: center;
+		font-size: 1.25rem;
+		letter-spacing: 0.1em;
 		color: var(--deep-slate);
-		text-decoration: none;
-		transform: rotate(-5deg);
-		transition: transform 0.2s;
-		display: block;
-		line-height: 1;
+		text-transform: uppercase;
+		text-align: center;
+		line-height: 1.1;
 	}
 
-	.ticket-card:hover .btn-book {
-		transform: rotate(0) scale(1.1);
-	}
-
-	/* .highlight .ticket-right {
-		background: var(--electric-blue);
-	}
-	.highlight .btn-book {
-		color: white;
-	} REMOVED to make all buttons same color */
+	/* Highlight styles removed for consistency */
 
 	@media (max-width: 768px) {
 		.hero {
@@ -898,16 +908,33 @@ const features = [
 		.ticket-stub {
 			flex-direction: row;
 			width: 100%;
-			height: 50px;
+			height: auto;
+			padding: 0.5rem;
+			gap: 1rem;
 		}
-		.vertical-text {
+
+		.vertical-label {
 			writing-mode: horizontal-tb;
 			transform: none;
-			padding: 0;
+			padding: 0.5rem 0;
+			border-left: none;
+			border-top: 1px dashed rgba(0,0,0,0.3);
+			margin: 0;
+			width: 100%;
+			font-size: 0.6rem;
 		}
+
 		.ticket-right {
 			width: 100%;
-			min-height: 80px;
+			min-height: auto;
+			padding: 1rem;
+			border-left: none;
+			border-top: 3px dashed var(--deep-slate);
+		}
+
+		.btn-book {
+			writing-mode: horizontal-tb;
+			letter-spacing: 0.2rem;
 		}
 		.mega-title {
 			font-size: 3.5rem;
@@ -998,7 +1025,7 @@ const features = [
 
 	.problem-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); /* Slightly reduced min-width */
 		gap: 2rem;
 	}
 
@@ -1016,9 +1043,15 @@ const features = [
 		box-shadow: 9px 9px 0px var(--deep-slate);
 	}
 
-	.problem-card .icon {
-		font-size: 3rem;
-		margin-bottom: 1rem;
+	/* .problem-card .icon removed */
+
+	.problem-img {
+		width: 100%;
+		height: 200px; /* Fixed height for consistency */
+		object-fit: cover;
+		border-radius: 0.5rem;
+		margin-bottom: 3.5rem;
+		border: 2px solid var(--deep-slate);
 	}
 
 	.problem-card h3 {
@@ -1061,12 +1094,13 @@ const features = [
 
 	@media (max-width: 768px) {
 		.problem-section {
-			padding: 4rem 1.5rem;
+			padding: 3rem 1rem; /* Reduced horizontal padding */
 		}
 
 		.problem-title {
-			font-size: 2.5rem; /* Smaller title on mobile */
+			font-size: 2.25rem; /* Smaller title on mobile */
 			margin-bottom: 2rem;
+			padding: 0 0.5rem; /* Prevent text touching edges */
 		}
 
 		.problem-grid {
@@ -1075,7 +1109,7 @@ const features = [
 		}
 
 		.problem-card {
-			padding: 2rem;
+			padding: 1.5rem; /* Reduced padding for mobile */
 		}
 
 		.section-divider {
@@ -1337,11 +1371,7 @@ const features = [
 			margin-right: auto;
 		}
 	}
-		.office-text p {
-			margin-left: auto;
-			margin-right: auto;
-		}
-	}
+
 
 	.floating-wa {
 		position: fixed;
