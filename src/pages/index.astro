@@ -97,11 +97,11 @@ const features = [
 				<div class="hero-footer-grid">
 					<div class="footer-item">
 						<span class="icon">🎯</span>
-						<p>Fokuskan hati untuk beribadah.</p>
+						<p>Fokuskan hati untuk ibadah.</p>
 					</div>
 					<div class="footer-item">
 						<span class="icon">🤝</span>
-						<p>Biarkan kami urus sisanya.</p>
+						<p>Tanpa Biaya Ini Itu.</p>
 					</div>
 					<div class="footer-item">
 						<span class="icon">✅</span>
@@ -115,7 +115,7 @@ const features = [
 		<section class="problem-section">
 			<div class="container">
 				<h2 class="section-title problem-title">
-					NIAT IBADAH<br /><span class="text-red"
+					NIAT IBADAH<br /><span class="text-highlight"
 						>MALAH CAPEK JALAN-JALAN?</span
 					>
 				</h2>
@@ -220,23 +220,26 @@ const features = [
 								<div class="ticket-left">
 									<div class="ticket-stub airline-list">
 										<img
-											src="/garuda.svg"
+											src="/Garuda%20Indonesia.svg"
 											alt="Garuda Indonesia"
 											class="airline-logo"
 											loading="lazy"
 										/>
 										<img
-											src="/malaysia.svg"
+											src="/Malaysia%20Airlines.svg"
 											alt="Malaysia Airlines"
 											class="airline-logo"
 											loading="lazy"
 										/>
 										<img
-											src="/lion.svg"
-											alt="Lion Air"
+											src="/saudia%20airlines.svg"
+											alt="Saudia Airlines"
 											class="airline-logo"
 											loading="lazy"
 										/>
+									</div>
+									<div class="vertical-label">
+										<span>FULL SERVICE AIRLINES ONLY</span>
 									</div>
 								</div>
 								<div class="ticket-content">
@@ -288,7 +291,7 @@ const features = [
 			<div class="container office-content">
 				<!-- CTA Part -->
 				<div class="cta-merged">
-					<h2>BERANGKAT?</h2>
+					<h2>BERANGKAAAT?</h2>
 					<a href="https://wa.me/6281234567890" class="btn-whatsapp">WHATSAPP KAMI SEKARANG</a>
 				</div>
 
@@ -316,10 +319,25 @@ const features = [
 	</main>
 
 	<Footer />
+
+	<!-- Floating WhatsApp Button -->
+	<a
+		href="https://wa.me/6281234567890"
+		class="floating-wa"
+		target="_blank"
+		aria-label="Chat WhatsApp"
+	>
+		<img
+			src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+			alt="WhatsApp"
+		/>
+	</a>
 </Layout>
 
 <style>
 	/* VARIABLES */
+	/* VARIABLES */
+	/* VARIABLES inherited from Layout */
 	/* VARIABLES inherited from Layout */
 
 	/* GLOBAL UTILS */
@@ -396,8 +414,8 @@ const features = [
 
 	.sticker-wrapper {
 		position: absolute;
-		top: 10%;
-		right: 10%;
+		top: 5%; /* Moved up */
+		right: 5%; /* Moved right */
 		transform: rotate(15deg);
 		z-index: 10;
 	}
@@ -447,18 +465,19 @@ const features = [
 	/* .badge CSS removed */
 
 	.outline-text {
-		color: var(
-			--off-white
-		); /* Filled instead of transparent for better legibility */
-		-webkit-text-stroke: 3px var(--deep-slate);
-		text-shadow: 4px 4px 0px var(--neon-lime); /* Add pop */
-		letter-spacing: 0.08em; /* Increased spacing to prevent overlap */
+		color: var(--off-white);
+		/* Simulated stroke using text-shadow to fix font overlap artifacts */
+		text-shadow: 
+			3px 0 0 var(--deep-slate), -3px 0 0 var(--deep-slate),
+			0 3px 0 var(--deep-slate), 0 -3px 0 var(--deep-slate),
+			2px 2px 0 var(--deep-slate), -2px -2px 0 var(--deep-slate),
+			2px -2px 0 var(--deep-slate), -2px 2px 0 var(--deep-slate),
+			6px 6px 0px var(--neon-lime); /* Pop shadow */
+		letter-spacing: 0.08em;
 	}
 
 	@media (min-width: 768px) {
-		.outline-text {
-			-webkit-text-stroke: 4px var(--deep-slate);
-		}
+		/* .outline-text stroke media query removed */
 	}
 
 	.hero-footer-grid {
@@ -605,10 +624,10 @@ const features = [
 	} /* Soft red highlight */
 
 	.bento-item h3 {
-		font-size: 1.75rem; /* Reduced from 2rem to fit longer titles */
+		font-size: 1.35rem; /* Further reduced to strictly fit 'PERLENGKAPAN' */
 		font-weight: 800;
 		margin: 1rem 0;
-		line-height: 1;
+		line-height: 1.25;
 		color: var(--deep-slate);
 	}
 
@@ -620,6 +639,7 @@ const features = [
 
 	.icon-box {
 		font-size: 3rem;
+		margin-bottom: 2rem; /* Added spacing between icon and title */
 	}
 
 	/* PACKAGES TICKET STYLE */
@@ -659,7 +679,7 @@ const features = [
 	}
 
 	.ticket-left {
-		flex: 0 0 60px; /* Reduced width */
+		flex: 0 0 120px; /* Increased to fit text + logos */
 		display: flex;
 		padding: 0;
 		position: relative;
@@ -692,8 +712,19 @@ const features = [
 		justify-content: center;
 	}
 
-	.vertical-text {
-		display: none; /* Hide old text */
+	.vertical-label {
+		writing-mode: vertical-rl;
+		transform: rotate(180deg);
+		font-size: 0.65rem;
+		font-weight: 800;
+		color: var(--off-white); /* Contrast against dark background */
+		letter-spacing: 0.1em;
+		padding: 1rem 0;
+		border-left: 1px dashed rgba(255,255,255,0.3);
+		margin-left: 0.5rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
 	.airline-list {
@@ -704,17 +735,28 @@ const features = [
 		gap: 0.75rem; /* Space between logos */
 		padding: 1rem 0;
 		height: 100%;
+		flex: 1;
 	}
 
 	.airline-logo {
 		width: 100%;
-		max-width: 32px; /* Smaller logos */
+		max-width: 60px; /* Increased from 32px */
 		height: auto;
 		object-fit: contain;
-		opacity: 0.9;
-		background: white; /* Add white bg for better visibility */
-		padding: 2px;
+		opacity: 1; /* Fully opaque */
+		background: white;
+		padding: 4px; /* Slightly more padding */
 		border-radius: 4px;
+	}
+
+	.text-highlight {
+		background: #ef4444;
+		color: white;
+		padding: 0 0.5rem;
+		display: inline-block;
+		transform: skew(-10deg);
+		font-style: italic;
+		text-shadow: 2px 2px 0px #991b1b;
 	}
 
 	.ticket-content {
@@ -1294,5 +1336,36 @@ const features = [
 			margin-left: auto;
 			margin-right: auto;
 		}
+	}
+		.office-text p {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	.floating-wa {
+		position: fixed;
+		bottom: 2rem;
+		right: 2rem;
+		width: 60px;
+		height: 60px;
+		background: #25d366;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		box-shadow: 4px 4px 0px var(--deep-slate);
+		border: 2px solid var(--deep-slate);
+		z-index: 9999;
+		transition: transform 0.2s;
+	}
+
+	.floating-wa:hover {
+		transform: scale(1.1);
+	}
+
+	.floating-wa img {
+		width: 35px;
+		height: 35px;
 	}
 </style>
