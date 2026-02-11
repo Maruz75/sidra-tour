@@ -297,6 +297,7 @@ const features = [
 		white-space: nowrap;
 		animation: marquee 50s linear infinite;
 		padding-left: 100%; /* Start from outside */
+		max-width: 100%; /* CRITICAL: Prevent forcing parent width */
 	}
 
 	.marquee-content span {
@@ -895,10 +896,18 @@ const features = [
 		.bento-item {
 			padding: 1.5rem;
 			max-width: 100%;
+			box-sizing: border-box;
+			width: 100%;
+		}
+
+		.title-card {
+			max-width: 100%;
+			width: 100%;
 		}
 
 		.title-card h2 {
 			font-size: 2rem;
+			word-break: break-word;
 		}
 	}
 	/* OFFICE VISIT SECTION */
