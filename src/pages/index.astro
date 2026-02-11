@@ -67,7 +67,7 @@ const features = [
 	},
 	{
 		icon: "🧳",
-		title: "TANPA PERLENGKAPAN",
+		title: "HEMAT PERLENGKAPAN",
 		desc: "Gak usah beli koper & seragam travel yang mahal. Pakai baju sendiri, bawa koper sendiri. Lebih hemat, lebih praktis!",
 	},
 ];
@@ -437,7 +437,7 @@ const features = [
 				transparent 60%
 			),
 			var(--off-white); /* Subtle glow center */
-		padding-top: 4rem;
+		padding-top: 8rem; /* Increased top padding to push content down */
 		position: relative;
 		/* overflow: hidden; REMOVED to prevent clipping issues */
 		padding-bottom: 4rem; /* Add padding bottom to separate from next section */
@@ -445,8 +445,8 @@ const features = [
 
 	.sticker-wrapper {
 		position: absolute;
-		top: 5%; /* Moved up */
-		right: 5%; /* Moved right */
+		top: 12%; /* Moved up slightly */
+		right: 22%; /* Moved left (more center) */
 		transform: rotate(15deg);
 		z-index: 10;
 	}
@@ -516,7 +516,7 @@ const features = [
 	}
 
 	.hero-footer-grid {
-		margin-top: 3rem;
+		margin-top: 1.5rem; /* Tighter spacing */
 		border-top: 3px solid var(--deep-slate);
 		padding-top: 2rem;
 		display: grid;
