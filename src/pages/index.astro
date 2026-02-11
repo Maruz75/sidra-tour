@@ -5,43 +5,40 @@ import Footer from "../components/Footer.astro";
 
 const packages = [
 	{
-		title: "Paket Reguler",
-		price: "28.5 Jt",
+		title: "REGULER",
 		duration: "9 Hari",
 		hotel: "Bintang 4",
 		features: [
-			"Penerbangan Direct",
+			"Direct Flight",
 			"Hotel Dekat Masjid",
 			"Makan 3x Sehari",
-			"City Tour Madinah & Mekkah",
-			"Muthawif Berpengalaman",
+			"City Tour",
+			"Muthawif Pro",
 		],
 		highlight: false,
 	},
 	{
-		title: "Paket VIP",
-		price: "35.5 Jt",
+		title: "VIP CLASS",
 		duration: "9 Hari",
 		hotel: "Bintang 5",
 		features: [
-			"Penerbangan Direct Saudi/Garuda",
+			"Direct Saudi/Garuda",
 			"Hotel Depan Pelataran",
-			"Makan Menu Indonesia",
-			"City Tour VIP",
+			"Menu Indonesia",
+			"Private Bus",
 			"Upgrade Kamar",
 		],
 		highlight: true,
 	},
 	{
-		title: "Paket Ramadhan",
-		price: "42.5 Jt",
+		title: "RAMADHAN",
 		duration: "12 Hari",
 		hotel: "Bintang 5",
 		features: [
-			"Awal/Tengah/Akhir Ramadhan",
-			"Ibadah Tarawih di Masjidil Haram",
+			"Full Ramadhan",
+			"Tarawih Masjidil Haram",
 			"Fullboard Hotel",
-			"Pembimbing Ibadah Khusus",
+			"Pembimbing Khusus",
 		],
 		highlight: false,
 	},
@@ -49,19 +46,19 @@ const packages = [
 
 const features = [
 	{
+		icon: "🚫",
+		title: "NO DRAMA",
+		desc: "Nggak ada city tour yang ga penting. Kita fokus ibadah, bukan shopping.",
+	},
+	{
 		icon: "✨",
-		title: "Tanpa Gimik",
-		desc: "Harga yang Anda bayar adalah harga final. Tidak ada biaya tersembunyi atau tambahan mendadak.",
+		title: "PURE IBADAH",
+		desc: "Manasik buat bekal ilmu, bukan cuma seremoni makan-makan doang.",
 	},
 	{
-		icon: "🤝",
-		title: "Sesuai Sunnah",
-		desc: "Bimbingan ibadah sesuai tuntunan Nabi Muhammad SAW oleh Ustadz berpengalaman.",
-	},
-	{
-		icon: "🏨",
-		title: "Fasilitas Terjamin",
-		desc: "Kepastian hotel dan maskapai penerbangan sejak awal pendaftaran.",
+		icon: "💸",
+		title: "FIX PRICE",
+		desc: "Harga awal = Harga akhir. Ga ada biaya siluman 'handling' atau 'seragam' dadakan.",
 	},
 ];
 ---
@@ -73,50 +70,95 @@ const features = [
 	<Navbar />
 
 	<main>
+		<!-- Marquee Banner -->
+		<div class="marquee-container">
+			<div class="marquee-content">
+				<span
+					>NO GIMMICKS • JUST IBADAH • SIDRA TOUR • 100% TRANSPARAN •
+					NO GIMMICKS • JUST IBADAH • SIDRA TOUR • 100% TRANSPARAN •
+					NO GIMMICKS • JUST IBADAH • SIDRA TOUR • 100% TRANSPARAN •
+					NO GIMMICKS • JUST IBADAH • SIDRA TOUR • 100% TRANSPARAN •</span
+				>
+			</div>
+		</div>
+
 		<!-- Hero Section -->
 		<section id="beranda" class="hero">
-			<div class="hero-overlay"></div>
 			<div class="container hero-content">
-				<div class="hashtag-container">
-					<span class="hashtag">#UmrohTanpaGimik</span>
+				<div class="sticker-wrapper">
+					<div class="sticker">★ #UmrohTanpaGimik</div>
 				</div>
-				<h1>
-					Menuju Baitullah dengan <br /><span class="text-gradient"
-						>Hati yang Tenang</span
-					>
+				<h1 class="mega-title">
+					IBADAH<br />
+					<span class="outline-text">FOKUS</span><br />
+					ONLY.
 				</h1>
-				<p>
-					Fokuskan hati Anda untuk beribadah. Biarkan kami yang
-					mengurus segala kebutuhan perjalanan Anda dengan transparan
-					dan amanah.
-				</p>
-				<div class="hero-buttons">
-					<a href="#paket" class="btn btn-primary btn-lg"
-						>Lihat Paket Umroh</a
-					>
-					<a
-						href="https://wa.me/6281234567890"
-						class="btn btn-outline btn-lg">Konsultasi Gratis</a
-					>
+				<div class="hero-footer">
+					<p>
+						Fokuskan hati untuk beribadah. Biarkan kami urus
+						sisanya. Transparan. Amanah. Sat Set.
+					</p>
+					<div class="hero-actions">
+						<a href="#paket" class="btn btn-primary"
+							>LIHAT PAKET ➜</a
+						>
+					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- Features Section -->
-		<section id="tentang" class="features">
+		<!-- Problem Section (The "Pain") -->
+		<section class="problem-section">
 			<div class="container">
-				<div class="section-header text-center">
-					<h2>Mengapa Memilih Sidra Tour?</h2>
-					<p>
-						Kami berkomitmen memberikan pelayanan terbaik demi
-						kekhusyukan ibadah Anda.
-					</p>
+				<h2 class="section-title problem-title">
+					NIAT IBADAH<br /><span class="text-red"
+						>MALAH JALAN-JALAN?</span
+					>
+				</h2>
+				<div class="problem-grid">
+					<div class="problem-card">
+						<div class="icon">🛍️</div>
+						<h3>KEBANYAKAN SHOPPING</h3>
+						<p>
+							Niat hati mau khusyuk, malah diajak keliling toko
+							oleh-oleh seharian. Capek di jalan, waktu ibadah
+							habis.
+						</p>
+					</div>
+					<div class="problem-card">
+						<div class="icon">🐪</div>
+						<h3>CITY TOUR GA PENTING</h3>
+						<p>
+							Ke peternakan unta, ke museum ini itu. Padahal hati
+							cuma ingin tenang itikaf di Masjidil Haram & Nabawi.
+						</p>
+					</div>
+					<div class="problem-card">
+						<div class="icon">🏃</div>
+						<h3>SHOLAT KETETERAN</h3>
+						<p>
+							Sering telat ke masjid gara-gara macet pas city tour
+							yang sebenernya ga wajib. Sayang banget waktunya.
+						</p>
+					</div>
 				</div>
-				<div class="features-grid">
+			</div>
+		</section>
+
+		<!-- Features Bento Grid (The "Solution") -->
+		<section id="tentang" class="features">
+			<div class="section-divider">
+				<span>TAPI TENANG. INI SOLUSINYA.</span>
+			</div>
+			<div class="container">
+				<div class="bento-grid">
+					<div class="bento-item title-card">
+						<h2>GA PERLU<br />GIMIK.</h2>
+					</div>
 					{
-						features.map((feature) => (
-							<div class="feature-card">
-								<div class="feature-icon">{feature.icon}</div>
+						features.map((feature, index) => (
+							<div class={`bento-item feature-${index}`}>
+								<div class="icon-box">{feature.icon}</div>
 								<h3>{feature.title}</h3>
 								<p>{feature.desc}</p>
 							</div>
@@ -126,51 +168,59 @@ const features = [
 			</div>
 		</section>
 
-		<!-- Packages Section -->
+		<!-- Packages (Horizontal Scroll / Stack vibe) -->
 		<section id="paket" class="packages">
 			<div class="container">
-				<div class="section-header text-center">
-					<h2>Pilihan Paket Umroh</h2>
-					<p>Sesuaikan dengan kebutuhan dan kenyamanan Anda.</p>
-				</div>
-				<div class="packages-grid">
+				<h2 class="section-title">
+					PILIH<span class="dot">.</span><br />PAKET<span class="dot"
+						>.</span
+					>
+				</h2>
+
+				<div class="packages-stack">
 					{
-						packages.map((pkg) => (
+						packages.map((pkg, i) => (
 							<div
-								class={`package-card ${pkg.highlight ? "highlight" : ""}`}
+								class={`ticket-card ${pkg.highlight ? "highlight" : ""}`}
 							>
-								{pkg.highlight && (
-									<div class="popular-tag">Terlaris</div>
-								)}
-								<div class="package-header">
-									<h3>{pkg.title}</h3>
-									<div class="price">Rp {pkg.price}</div>
-									<span class="duration">{pkg.duration}</span>
+								<div class="ticket-left">
+									<div class="ticket-stub">
+										<span class="vertical-text">SIDRA</span>
+									</div>
 								</div>
-								<ul class="package-features">
-									{pkg.features.map((feat) => (
-										<li>
-											<svg
-												class="check-icon"
-												viewBox="0 0 20 20"
-												fill="currentColor"
-											>
-												<path
-													fill-rule="evenodd"
-													d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-													clip-rule="evenodd"
-												/>
-											</svg>
-											{feat}
-										</li>
-									))}
-								</ul>
-								<div class="package-footer">
+								<div class="ticket-content">
+									<div class="ticket-header">
+										<span class="pkg-type">UMROH TRIP</span>
+										<h3>{pkg.title}</h3>
+									</div>
+									<div class="ticket-body">
+										<div class="info-row">
+											<span class="label">DURASI</span>
+											<span class="value">
+												{pkg.duration}
+											</span>
+										</div>
+										<div class="info-row">
+											<span class="label">HOTEL</span>
+											<span class="value">
+												{pkg.hotel}
+											</span>
+										</div>
+										<div class="features-list">
+											{pkg.features
+												.slice(0, 3)
+												.map((f) => (
+													<span>• {f}</span>
+												))}
+										</div>
+									</div>
+								</div>
+								<div class="ticket-right">
 									<a
-										href="https://wa.me/6281234567890?text=Saya%20tertarik%20dengan%20paket%20"
-										class={`btn ${pkg.highlight ? "btn-primary" : "btn-outline"} btn-block`}
+										href="https://wa.me/6281234567890"
+										class="btn-book"
 									>
-										Pilih Paket
+										BOOK NOW
 									</a>
 								</div>
 							</div>
@@ -182,19 +232,11 @@ const features = [
 
 		<!-- CTA Section -->
 		<section id="kontak" class="cta">
-			<div class="container cta-container">
-				<div class="cta-content">
-					<h2>Siap Menjadi Tamu Allah?</h2>
-					<p>
-						Jangan tunda niat baik Anda. Segera daftarkan diri dan
-						keluarga sekarang juga. Kursi terbatas!
-					</p>
-					<a
-						href="https://wa.me/6281234567890"
-						class="btn btn-accent btn-lg"
-						>Hubungi Kami via WhatsApp</a
-					>
-				</div>
+			<div class="cta-inner">
+				<h2>BERANGKAT?</h2>
+				<a href="https://wa.me/6281234567890" class="btn-whatsapp"
+					>WHATSAPP KAMI SEKARANG</a
+				>
 			</div>
 		</section>
 	</main>
@@ -203,298 +245,627 @@ const features = [
 </Layout>
 
 <style>
-	/* Hero Section */
-	.hero {
-		position: relative;
-		height: 90vh;
-		display: flex;
-		align-items: center;
-		background-image: url("https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?q=80&w=1600&auto=format&fit=crop"); /* Mecca Image */
-		background-size: cover;
-		background-position: center;
-		color: white;
-		overflow: hidden;
-	}
+	/* VARIABLES */
+	/* VARIABLES inherited from Layout */
 
-	.hero-overlay {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: linear-gradient(
-			to bottom,
-			rgba(4, 120, 87, 0.8),
-			rgba(6, 78, 59, 0.9)
-		);
-		z-index: 1;
-	}
-
-	.hero-content {
-		position: relative;
-		z-index: 2;
-		max-width: 800px;
+	/* GLOBAL UTILS */
+	.container {
+		max-width: 1200px;
 		margin: 0 auto;
-		text-align: center;
+		padding: 0 1.5rem;
 	}
 
-	.hashtag-container {
-		margin-bottom: 1.5rem;
-		animation: fadeInDown 1s ease-out;
+	/* MARQUEE */
+	.marquee-container {
+		background: var(--neon-lime);
+		color: var(--deep-slate);
+		overflow: hidden;
+		padding: 0.75rem 0;
+		font-weight: 900;
+		font-size: 1.2rem;
+		letter-spacing: 2px;
+		border-bottom: 3px solid var(--deep-slate);
+		position: sticky;
+		top: 0; /* sticky top below nav if needed, or stick nav above */
+		z-index: 90;
+		white-space: nowrap;
 	}
 
-	.hashtag {
-		background: rgba(255, 255, 255, 0.1);
-		backdrop-filter: blur(10px);
-		border: 2px solid var(--color-accent);
-		color: var(--color-accent);
-		padding: 0.75rem 1.5rem;
-		border-radius: 3rem;
-		font-size: 1.25rem;
-		font-weight: 700;
-		letter-spacing: 0.05em;
-		box-shadow: 0 0 20px rgba(217, 119, 6, 0.3);
-		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+	.marquee-content {
+		display: inline-block;
+		white-space: nowrap;
+		animation: marquee 50s linear infinite;
+		padding-left: 100%; /* Start from outside */
+	}
+
+	.marquee-content span {
+		margin-right: 2rem;
 		display: inline-block;
 	}
 
-	/* .badge removed */
+	@keyframes marquee {
+		0% {
+			transform: translate(0, 0);
+		}
+		100% {
+			transform: translate(-100%, 0);
+		}
+	}
 
-	.hero h1 {
-		font-size: 3.5rem;
-		line-height: 1.2;
-		margin-bottom: 1.5rem;
+	/* HERO */
+	.hero {
+		min-height: 85vh;
+		display: flex;
+		align-items: center;
+		background: var(--off-white);
+		padding-top: 4rem;
+		position: relative;
+	}
+
+	.sticker-wrapper {
+		position: absolute;
+		top: 10%;
+		right: 10%;
+		transform: rotate(15deg);
+		z-index: 10;
+	}
+
+	.sticker {
+		background: var(--electric-blue);
 		color: white;
+		padding: 1rem 2rem;
+		border-radius: 50%;
+		font-weight: 900;
+		box-shadow: 8px 8px 0px var(--deep-slate);
+		animation: float 3s ease-in-out infinite;
 	}
 
-	.text-gradient {
-		background: linear-gradient(to right, #fbbf24, #d97706);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
+	@keyframes float {
+		0%,
+		100% {
+			transform: translateY(0);
+		}
+		50% {
+			transform: translateY(-10px);
+		}
 	}
 
-	.hero p {
-		font-size: 1.25rem;
-		color: #e5e7eb;
-		margin-bottom: 2.5rem;
-		max-width: 600px;
+	.mega-title {
+		font-size: clamp(4rem, 12vw, 9rem);
+		line-height: 0.9;
+		font-weight: 900;
+		color: var(--deep-slate);
+		letter-spacing: -0.04em;
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+
+	.outline-text {
+		color: var(
+			--off-white
+		); /* Filled instead of transparent for better legibility */
+		-webkit-text-stroke: 3px var(--deep-slate);
+		text-shadow: 4px 4px 0px var(--neon-lime); /* Add pop */
+	}
+
+	@media (min-width: 768px) {
+		.outline-text {
+			-webkit-text-stroke: 4px var(--deep-slate);
+		}
+	}
+
+	.hero-footer {
+		margin-top: 3rem;
+		border-top: 3px solid var(--deep-slate);
+		padding-top: 2rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 2rem;
+		max-width: 1000px;
 		margin-left: auto;
 		margin-right: auto;
 	}
 
-	.hero-buttons {
-		display: flex;
-		gap: 1rem;
-		justify-content: center;
+	.hero-footer p {
+		font-size: 1.25rem;
+		max-width: 400px;
+		font-weight: 600;
+		color: var(--deep-slate);
+		text-align: left;
+		margin: 0;
 	}
 
-	.btn-lg {
-		padding: 1rem 2rem;
-		font-size: 1.1rem;
+	.btn-primary {
+		background: var(--deep-slate);
+		color: var(--neon-lime);
+		padding: 1rem 2.5rem;
+		font-size: 1.25rem;
+		font-weight: 700;
+		border: none;
+		cursor: pointer;
+		transition: transform 0.2s;
+		display: inline-block;
+		border-radius: 0.5rem;
 	}
 
-	.btn-outline {
-		background: transparent;
-		border: 2px solid white;
+	.btn-primary:hover {
+		transform: scale(1.05);
+		background: var(--electric-blue);
 		color: white;
 	}
 
-	.btn-outline:hover {
-		background: white;
-		color: var(--color-primary-dark);
-	}
-
-	/* Features Section */
+	/* FEATURES BENTO */
 	.features {
 		padding: 6rem 0;
 		background: white;
 	}
 
-	.section-header {
+	.bento-grid {
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+		gap: 1.5rem;
+	}
+
+	.bento-item {
+		background: white;
+		border: 3px solid var(--deep-slate);
+		padding: 2rem;
+		border-radius: 1rem;
+		box-shadow: 6px 6px 0px var(--deep-slate);
+		transition: transform 0.2s;
+	}
+
+	.bento-item:hover {
+		transform: translate(-3px, -3px);
+		box-shadow: 9px 9px 0px var(--deep-slate);
+	}
+
+	.title-card {
+		grid-column: span 12;
+		background: var(--electric-blue);
+		color: white;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 250px;
+	}
+
+	@media (min-width: 768px) {
+		.title-card {
+			grid-column: span 3;
+		}
+		.feature-0 {
+			grid-column: span 3;
+		}
+		.feature-1 {
+			grid-column: span 3;
+		}
+		.feature-2 {
+			grid-column: span 3;
+		}
+	}
+
+	.title-card h2 {
+		font-size: clamp(2.5rem, 5vw, 4rem);
+		line-height: 0.9;
+		font-weight: 900;
+		margin: 0;
+		text-align: center;
+		color: white; /* Force white color */
+	}
+
+	.feature-0 {
+		background: var(--neon-lime);
+	}
+	.feature-0 h3 {
+		color: var(--deep-slate);
+	}
+
+	.feature-1 {
+		background: #fff;
+	}
+	.feature-2 {
+		background: #feb2b2;
+	} /* Soft red highlight */
+
+	.bento-item h3 {
+		font-size: 2rem;
+		font-weight: 800;
+		margin: 1rem 0;
+		line-height: 1;
+		color: var(--deep-slate);
+	}
+
+	.bento-item p {
+		font-weight: 500;
+		font-size: 1.1rem;
+		color: var(--deep-slate);
+	}
+
+	.icon-box {
+		font-size: 3rem;
+	}
+
+	/* PACKAGES TICKET STYLE */
+	.packages {
+		background: var(--deep-slate);
+		color: var(--off-white);
+		padding: 4rem 0; /* Reduced padding */
+		overflow: hidden;
+	}
+
+	.section-title {
+		font-size: clamp(2.5rem, 6vw, 5rem); /* Reduced max size */
+		font-weight: 900;
+		line-height: 0.9;
+		margin-bottom: 3rem;
+		color: white;
+	}
+
+	.dot {
+		color: var(--neon-lime);
+	}
+
+	.packages-stack {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem; /* Reduced gap */
+	}
+
+	.ticket-card {
+		display: flex;
+		background: var(--off-white);
+		color: var(--deep-slate);
+		border-radius: 0.75rem; /* Slightly smaller radius */
+		overflow: hidden;
+		min-height: 160px; /* Reduced height */
+		position: relative;
+	}
+
+	.ticket-left {
+		flex: 0 0 60px; /* Reduced width */
+		display: flex;
+		padding: 0;
+		position: relative;
+		border-right: 2px dashed var(--deep-slate);
+	}
+
+	.ticket-left::after,
+	.ticket-left::before {
+		content: "";
+		position: absolute;
+		right: -10px; /* Adjusted hole position */
+		width: 20px; /* Smaller holes */
+		height: 20px;
+		background: var(--deep-slate);
+		border-radius: 50%;
+		z-index: 10;
+	}
+	.ticket-left::before {
+		top: -10px;
+	}
+	.ticket-left::after {
+		bottom: -10px;
+	}
+
+	.ticket-stub {
+		background: var(--deep-slate);
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.vertical-text {
+		writing-mode: vertical-rl;
+		transform: rotate(180deg);
+		color: var(--neon-lime);
+		font-weight: 900;
+		letter-spacing: 0.15rem;
+		font-size: 1rem; /* Smaller font */
+		white-space: nowrap;
+		padding: 1rem 0;
+	}
+
+	.ticket-content {
+		padding: 1.25rem 1.5rem; /* Reduced padding */
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.pkg-type {
+		font-weight: 700;
+		color: #64748b;
+		letter-spacing: 0.1em;
+		font-size: 0.8rem;
+		display: block;
+		margin-bottom: 0.25rem;
+	}
+
+	.ticket-content h3 {
+		font-size: clamp(1.5rem, 3vw, 2.25rem); /* Reduced title size */
+		font-weight: 900;
+		margin: 0 0 1rem 0;
+		line-height: 1;
+	}
+
+	.ticket-body {
+		display: flex;
+		gap: 1.5rem;
+		flex-wrap: wrap;
+	}
+
+	.info-row {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.label {
+		font-size: 0.65rem;
+		font-weight: 700;
+		color: #64748b;
+		letter-spacing: 0.1em;
+	}
+
+	.value {
+		font-weight: 800;
+		font-size: 1rem; /* Smaller value */
+	}
+
+	.features-list {
+		display: flex;
+		gap: 0.5rem;
+		font-weight: 600;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+
+	.features-list span {
+		background: #e2e8f0;
+		padding: 0.2rem 0.6rem;
+		border-radius: 4px;
+		font-size: 0.8rem;
+	}
+
+	.ticket-right {
+		width: 140px; /* Reduced button area width */
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: var(--neon-lime);
+		padding: 1rem;
+		cursor: pointer;
+		transition: background 0.2s;
+	}
+
+	.ticket-right:hover {
+		background: #bef264;
+	}
+
+	.btn-book {
+		font-weight: 900;
+		font-size: 1.25rem; /* Smaller button text */
+		text-align: center;
+		color: var(--deep-slate);
+		text-decoration: none;
+		transform: rotate(-5deg);
+		transition: transform 0.2s;
+		display: block;
+		line-height: 1;
+	}
+
+	.ticket-card:hover .btn-book {
+		transform: rotate(0) scale(1.1);
+	}
+
+	.highlight .ticket-right {
+		background: var(--electric-blue);
+	}
+	.highlight .btn-book {
+		color: white;
+	}
+
+	@media (max-width: 768px) {
+		.ticket-card {
+			flex-direction: column;
+		}
+		.ticket-left {
+			flex: 0 0 auto;
+			min-height: 60px;
+			border-right: none;
+			border-bottom: 3px dashed var(--deep-slate);
+			width: 100%;
+		}
+		.ticket-left::after,
+		.ticket-left::before {
+			display: none;
+		} /* Simplify for mobile for now or adjust positioning */
+		.ticket-stub {
+			flex-direction: row;
+			width: 100%;
+			height: 50px;
+		}
+		.vertical-text {
+			writing-mode: horizontal-tb;
+			transform: none;
+			padding: 0;
+		}
+		.ticket-right {
+			width: 100%;
+			min-height: 80px;
+		}
+		.mega-title {
+			font-size: 4rem;
+		}
+		.hero-footer {
+			flex-direction: column;
+			align-items: stretch;
+			text-align: center;
+		}
+		.hero-footer p {
+			text-align: center;
+			max-width: 100%;
+		}
+		.btn-primary {
+			width: 100%;
+			text-align: center;
+		}
+	}
+
+	/* CTA */
+	.cta {
+		padding: 6rem 1.5rem;
+		background: white;
+	}
+
+	.cta-inner {
+		background: var(--neon-lime);
+		padding: 4rem 2rem;
+		border-radius: 2rem;
+		text-align: center;
+		border: 4px solid var(--deep-slate);
+		box-shadow: 12px 12px 0px var(--deep-slate);
+	}
+
+	.cta-inner h2 {
+		font-size: clamp(3rem, 10vw, 6rem);
+		font-weight: 900;
+		line-height: 0.9;
+		margin-bottom: 2rem;
+		color: var(--deep-slate);
+	}
+
+	.btn-whatsapp {
+		background: var(--deep-slate);
+		color: white;
+		padding: 1.25rem 2rem;
+		font-size: 1.1rem;
+		font-weight: 700;
+		border-radius: 100px;
+		display: inline-block;
+		transition: all 0.2s;
+		text-decoration: none;
+	}
+
+	.btn-whatsapp:hover {
+		transform: scale(1.05);
+		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+	}
+
+	/* PROBLEM SECTION */
+	.problem-section {
+		background: #020617; /* Very dark slate */
+		color: white;
+		padding: 6rem 0;
+		position: relative;
+	}
+
+	.problem-title {
+		font-size: clamp(3rem, 8vw, 6rem);
+		line-height: 0.9;
+		font-weight: 900;
 		text-align: center;
 		margin-bottom: 4rem;
 	}
 
-	.section-header h2 {
-		font-size: 2.5rem;
-		margin-bottom: 1rem;
+	.text-red {
+		color: #ff4757; /* Warning Red */
+		font-style: italic;
 	}
 
-	.section-header p {
-		font-size: 1.1rem;
-		color: #6b7280;
-	}
-
-	.features-grid {
+	.problem-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		gap: 2rem;
 	}
 
-	.feature-card {
-		padding: 2rem;
-		border-radius: 1rem;
-		background: #f9fafb;
-		border: 1px solid #e5e7eb;
-		transition: all 0.3s ease;
-		text-align: center;
-	}
-
-	.feature-card:hover {
-		transform: translateY(-5px);
-		box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-		border-color: var(--color-primary);
-	}
-
-	.feature-icon {
-		font-size: 3rem;
-		margin-bottom: 1.5rem;
-		background: #ecfdf5;
-		width: 80px;
-		height: 80px;
-		line-height: 80px;
-		border-radius: 50%;
-		margin-left: auto;
-		margin-right: auto;
-	}
-
-	.feature-card h3 {
-		margin-bottom: 1rem;
-		color: var(--color-primary-dark);
-		font-size: 1.5rem;
-	}
-
-	/* Packages Section */
-	.packages {
-		padding: 6rem 0;
-		background: #f0fdf4;
-	}
-
-	.packages-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-		gap: 2rem;
-		align-items: flex-start;
-	}
-
-	.package-card {
-		background: white;
-		border-radius: 1.5rem;
+	.problem-card {
+		background: rgba(255, 255, 255, 0.05);
+		border: 2px solid #334155;
 		padding: 2.5rem;
-		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-		position: relative;
-		border: 1px solid #e5e7eb;
-		transition: all 0.3s ease;
-	}
-
-	.package-card.highlight {
-		border: 2px solid var(--color-accent);
-		transform: scale(1.05);
-		z-index: 10;
-		box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-	}
-
-	.popular-tag {
-		position: absolute;
-		top: -12px;
-		left: 50%;
-		transform: translateX(-50%);
-		background: var(--color-accent);
-		color: white;
-		padding: 0.25rem 1rem;
 		border-radius: 1rem;
-		font-size: 0.875rem;
-		font-weight: 600;
+		transition: transform 0.2s;
 	}
 
-	.package-header {
-		text-align: center;
-		margin-bottom: 2rem;
-		padding-bottom: 2rem;
-		border-bottom: 1px solid #eee;
+	.problem-card:hover {
+		transform: translateY(-5px);
+		background: rgba(255, 255, 255, 0.1);
+		border-color: #ff4757;
 	}
 
-	.package-header h3 {
+	.problem-card .icon {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+	}
+
+	.problem-card h3 {
+		color: #ff4757;
 		font-size: 1.5rem;
+		font-weight: 800;
 		margin-bottom: 1rem;
-		color: #374151;
 	}
 
-	.price {
-		font-size: 2.5rem;
-		font-weight: 700;
-		color: var(--color-primary);
-		margin-bottom: 0.5rem;
+	.problem-card p {
+		color: #cbd5e1;
+		font-size: 1.1rem;
+		line-height: 1.5;
+		margin: 0;
 	}
 
-	.duration {
-		display: inline-block;
-		background: #ecfdf5;
-		color: var(--color-primary-dark);
-		padding: 0.25rem 0.75rem;
-		border-radius: 1rem;
-		font-size: 0.875rem;
-		font-weight: 500;
-	}
-
-	.package-features {
-		list-style: none;
-		padding: 0;
-		margin: 0 0 2rem 0;
-	}
-
-	.package-features li {
+	/* Section Divider */
+	.section-divider {
 		display: flex;
+		justify-content: center;
 		align-items: center;
-		margin-bottom: 1rem;
-		color: #4b5563;
-	}
-
-	.check-icon {
-		width: 1.25rem;
-		height: 1.25rem;
-		color: var(--color-primary);
-		margin-right: 0.75rem;
-		flex-shrink: 0;
-	}
-
-	.btn-block {
-		display: block;
-		width: 100%;
-	}
-
-	/* CTA Section */
-	.cta {
-		padding: 6rem 0;
-		background: var(--color-primary-dark);
-		color: white;
+		margin-bottom: 4rem;
+		margin-top: -2rem;
 		text-align: center;
+		padding: 0 1rem;
 	}
 
-	.cta-content h2 {
-		color: white;
-		font-size: 2.5rem;
-		margin-bottom: 1.5rem;
+	.section-divider span {
+		background: var(--deep-slate);
+		color: var(--neon-lime);
+		padding: 0.5rem 1.5rem;
+		border-radius: 50px;
+		font-weight: 900;
+		font-size: 1.2rem;
+		border: 2px solid var(--neon-lime);
+		transform: rotate(-2deg);
+		display: inline-block;
 	}
 
-	.cta-content p {
-		font-size: 1.25rem;
-		color: #d1d5db;
-		margin-bottom: 3rem;
-	}
-
-	/* Responsive */
 	@media (max-width: 768px) {
-		.hero h1 {
-			font-size: 2.5rem;
+		.problem-section {
+			padding: 4rem 1.5rem;
 		}
 
-		.hero-buttons {
-			flex-direction: column;
+		.problem-title {
+			font-size: 2.5rem; /* Smaller title on mobile */
+			margin-bottom: 2rem;
 		}
 
-		.package-card.highlight {
-			transform: none;
+		.problem-grid {
+			grid-template-columns: 1fr; /* Stack vertically */
+			gap: 1.5rem;
+		}
+
+		.problem-card {
+			padding: 2rem;
+		}
+
+		.section-divider {
+			margin-top: -2rem;
+			margin-bottom: 3rem;
+		}
+
+		.section-divider span {
+			font-size: 0.9rem; /* Fit on small screens */
+			padding: 0.5rem 1rem;
 		}
 	}
 </style>

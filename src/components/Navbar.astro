@@ -2,65 +2,256 @@
 
 ---
 
-<nav class="navbar">
-    <div class="container navbar-container">
-        <a href="/" class="logo">Sidra Tour</a>
-        <div class="nav-links">
-            <a href="#beranda">Beranda</a>
-            <a href="#paket">Paket Umroh</a>
-            <a href="#tentang">Tentang Kami</a>
-            <a href="#kontak" class="btn btn-primary btn-sm">Hubungi Kami</a>
+<nav>
+    <div class="nav-container">
+        <a href="/" class="logo">SIDRA<span>TOUR</span>.</a>
+
+        <!-- Desktop Menu -->
+        <ul class="nav-links">
+            <li><a href="#beranda">BERANDA</a></li>
+            <li><a href="#tentang">TENTANG</a></li>
+            <li><a href="#paket">PAKET</a></li>
+        </ul>
+
+        <div class="nav-right">
+            <a href="https://wa.me/6281234567890" class="btn-nav">KONTAK</a>
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-toggle" aria-label="Toggle Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
         </div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+        <a href="#beranda" class="mobile-link">BERANDA</a>
+        <a href="#tentang" class="mobile-link">TENTANG</a>
+        <a href="#paket" class="mobile-link">PAKET</a>
+        <a href="https://wa.me/6281234567890" class="mobile-btn">WHATSAPP</a>
     </div>
 </nav>
 
+<script>
+    const toggle = document.querySelector(".mobile-toggle");
+    const mobileMenu = document.querySelector(".mobile-menu");
+    const mobileLinks = document.querySelectorAll(".mobile-link");
+
+    if (toggle && mobileMenu) {
+        toggle.addEventListener("click", () => {
+            toggle.classList.toggle("active");
+            mobileMenu.classList.toggle("active");
+            document.body.classList.toggle("no-scroll");
+        });
+
+        mobileLinks.forEach((link) => {
+            link.addEventListener("click", () => {
+                toggle.classList.remove("active");
+                mobileMenu.classList.remove("active");
+                document.body.classList.remove("no-scroll");
+            });
+        });
+    }
+</script>
+
 <style>
-    .navbar {
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
+    /* Navbar Styles */
+    nav {
+        background: var(--off-white);
+        border-bottom: 3px solid var(--deep-slate);
         position: sticky;
         top: 0;
         z-index: 1000;
-        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-        padding: 1rem 0;
+        padding: 1rem 1.5rem;
     }
 
-    .navbar-container {
+    .nav-container {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
     }
 
     .logo {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: var(--color-primary-dark);
-        letter-spacing: -0.025em;
+        font-weight: 900;
+        font-size: 1.75rem;
+        letter-spacing: -0.05em;
+        color: var(--deep-slate);
+        text-decoration: none;
+        z-index: 1002;
+        position: relative;
+    }
+
+    .logo span {
+        color: var(--electric-blue);
     }
 
     .nav-links {
         display: flex;
-        gap: 2rem;
+        gap: 2.5rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-links a {
+        font-weight: 700;
+        font-size: 1rem;
+        color: var(--deep-slate);
+        text-decoration: none;
+        text-transform: uppercase;
+        position: relative;
+        padding: 0.5rem 0;
+    }
+
+    .nav-links a::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--neon-lime);
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+    }
+
+    .nav-links a:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+
+    .nav-right {
+        display: flex;
         align-items: center;
+        gap: 1rem;
     }
 
-    .nav-links a:not(.btn) {
-        font-weight: 500;
-        color: var(--color-text);
+    .btn-nav {
+        background: var(--deep-slate);
+        color: white;
+        padding: 0.75rem 1.5rem;
+        font-weight: 700;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: transform 0.2s;
+        border: 2px solid transparent;
+        display: inline-block;
     }
 
-    .nav-links a:not(.btn):hover {
-        color: var(--color-primary);
+    .btn-nav:hover {
+        background: white;
+        color: var(--deep-slate);
+        border-color: var(--deep-slate);
+        transform: translate(-3px, -3px);
+        box-shadow: 5px 5px 0px var(--deep-slate);
     }
 
-    .btn-sm {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
+    /* Mobile Toggle */
+    .mobile-toggle {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 1002;
+        padding: 0;
     }
 
+    .bar {
+        width: 100%;
+        height: 3px;
+        background-color: var(--deep-slate);
+        transition: all 0.3s ease;
+    }
+
+    /* Mobile Menu Overlay */
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--deep-slate);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transform: translateY(-100%);
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: 1001;
+    }
+
+    .mobile-menu.active {
+        transform: translateY(0);
+    }
+
+    .mobile-link {
+        color: var(--off-white);
+        font-size: 2rem;
+        font-weight: 900;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: color 0.2s;
+    }
+
+    .mobile-link:hover {
+        color: var(--neon-lime);
+        letter-spacing: 2px;
+    }
+
+    .mobile-btn {
+        background: var(--neon-lime);
+        color: var(--deep-slate);
+        padding: 1rem 3rem;
+        font-weight: 800;
+        font-size: 1.25rem;
+        border-radius: 50px;
+        text-decoration: none;
+        margin-top: 2rem;
+    }
+
+    /* Toggle Animation */
+    .mobile-toggle.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+        background-color: var(--off-white); /* Contrast on dark menu */
+    }
+
+    .mobile-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-toggle.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+        background-color: var(--off-white);
+    }
+
+    /* Mobile Responsive */
     @media (max-width: 768px) {
-        .nav-links {
-            display: none; /* simple mobile hide for now */
+        .nav-links,
+        .btn-nav {
+            display: none;
+        }
+
+        /* With Bottom Nav, we don't need the hamburger menu anymore */
+        .mobile-toggle {
+            display: none;
+        }
+
+        .nav-container {
+            justify-content: center; /* Center logo on mobile */
+        }
+
+        nav {
+            padding: 0.75rem 0; /* Slimmer nav on mobile */
+            border-bottom: 2px solid var(--deep-slate);
         }
     }
 </style>

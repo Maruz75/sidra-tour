@@ -5,6 +5,8 @@ import "@fontsource/outfit/500.css";
 import "@fontsource/outfit/600.css";
 import "@fontsource/outfit/700.css";
 
+import BottomNav from "../components/BottomNav.astro";
+
 interface Props {
 	title?: string;
 	description?: string;
@@ -38,17 +40,24 @@ const {
 		/>
 	</head>
 	<body>
+		<div class="noise-overlay"></div>
 		<slot />
+		<BottomNav />
 	</body>
 </html>
 
 <style is:global>
 	:root {
-		--color-primary: #047857; /* Emerald 700 */
-		--color-primary-dark: #064e3b; /* Emerald 900 */
-		--color-accent: #d97706; /* Amber 600 */
-		--color-text: #1f2937; /* Gray 800 */
-		--color-bg: #f9fafb; /* Gray 50 */
+		--color-primary: #0f172a; /* Deep Slate (Base Text/Bg) */
+		--deep-slate: #0f172a;
+		--neon-lime: #ccf381;
+		--electric-blue: #4831d4;
+		--off-white: #f8fafc;
+
+		--color-primary-dark: #020617;
+		--color-accent: #ccf381; /* Lime as accent */
+		--color-text: #0f172a;
+		--color-bg: #f8fafc;
 		--color-white: #ffffff;
 
 		--font-sans: "Outfit", sans-serif;
@@ -67,6 +76,24 @@ const {
 		min-height: 100vh;
 		display: flex;
 		flex-direction: column;
+	}
+
+	@media (max-width: 768px) {
+		body {
+			padding-bottom: 80px; /* Space for Bottom Nav */
+		}
+	}
+
+	.noise-overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		pointer-events: none;
+		z-index: 9999;
+		opacity: 0.05;
+		background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 	}
 
 	h1,
