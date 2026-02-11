@@ -4,7 +4,9 @@
 
 <nav>
     <div class="nav-container">
-        <a href="/" class="logo">SIDRA<span>TOUR</span>.</a>
+        <a href="/" class="logo">
+            <img src="/Sidra Tour.png" alt="Sidra Tour Logo" class="logo-img" />
+        </a>
 
         <!-- Desktop Menu -->
         <ul class="nav-links">
@@ -63,7 +65,7 @@
         position: sticky;
         top: 0;
         z-index: 1000;
-        padding: 1rem 1.5rem;
+        padding: 0.5rem 1.5rem; /* Reduced padding to keep navbar short */
         width: 100%;
     }
 
@@ -76,18 +78,22 @@
     }
 
     .logo {
-        font-weight: 900;
-        font-size: 1.75rem;
-        letter-spacing: -0.05em;
-        color: var(--deep-slate);
-        text-decoration: none;
-        z-index: 1002;
+        display: block;
         position: relative;
+        width: 140px; /* Reserve layout space */
+        height: 40px; /* Keep layout height small */
+        z-index: 1002;
     }
 
-    .logo span {
-        color: var(--electric-blue);
+    .logo-img {
+        position: absolute;
+        top: -15px; /* Pull up to center/hang */
+        left: 0;
+        height: 75px; /* Large visible logo */
+        width: auto;
     }
+
+    /* REMOVED OLD TEXT LOGO STYLES */
 
     .nav-links {
         display: flex;
