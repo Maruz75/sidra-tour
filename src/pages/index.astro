@@ -51,9 +51,9 @@ const features = [
 		desc: "Nggak ada city tour yang ga penting. Kita fokus ibadah, bukan shopping.",
 	},
 	{
-		icon: "✨",
-		title: "PURE IBADAH",
-		desc: "Manasik buat bekal ilmu, bukan cuma seremoni makan-makan doang.",
+		icon: "💻",
+		title: "MANASIK ONLINE",
+		desc: "Manasik online, nggak usah di hotel mahal! Lebih efisien, hemat biaya, dan fokus pada materi ilmu.",
 	},
 	{
 		icon: "💸",
@@ -227,6 +227,27 @@ const features = [
 						))
 					}
 				</div>
+			</div>
+		</section>
+
+		<!-- Office Visit CTA -->
+		<section class="office-visit">
+			<div class="container office-content">
+				<div class="office-text">
+					<h2>LEBIH SUKA<br />NGOBROL LANGSUNG?</h2>
+					<p>
+						Yuk mampir ke kantor kami! Ngopi-ngopi santai sambil
+						konsultasi rencana ibadahmu. Tanpa kaku-kaku club.
+					</p>
+					<a
+						href="https://maps.google.com/?q=Sidra+Tour"
+						target="_blank"
+						class="btn-maps"
+					>
+						📍 LIHAT LOKASI DI MAPS
+					</a>
+				</div>
+				<div class="office-decor">🏢</div>
 			</div>
 		</section>
 
@@ -866,6 +887,92 @@ const features = [
 		.section-divider span {
 			font-size: 0.9rem; /* Fit on small screens */
 			padding: 0.5rem 1rem;
+		}
+	}
+	/* OFFICE VISIT SECTION */
+	.office-visit {
+		background: white;
+		padding: 4rem 0;
+		border-top: 4px solid var(--deep-slate);
+	}
+
+	.office-content {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		background: #f1f5f9;
+		border: 3px solid var(--deep-slate);
+		border-radius: 1.5rem;
+		padding: 3rem;
+		box-shadow: 8px 8px 0px var(--neon-lime);
+		gap: 2rem;
+	}
+
+	.office-text h2 {
+		font-size: clamp(2rem, 5vw, 3.5rem);
+		line-height: 1;
+		font-weight: 900;
+		margin-bottom: 1rem;
+		color: var(--deep-slate);
+	}
+
+	.office-text p {
+		font-size: 1.1rem;
+		max-width: 500px;
+		margin-bottom: 2rem;
+		color: #475569;
+	}
+
+	.office-decor {
+		font-size: 8rem;
+		display: none;
+	}
+
+	@media (min-width: 768px) {
+		.office-decor {
+			display: block;
+			animation: bounce 2s infinite;
+		}
+	}
+
+	@keyframes bounce {
+		0%,
+		100% {
+			transform: translateY(0);
+		}
+		50% {
+			transform: translateY(-10px);
+		}
+	}
+
+	.btn-maps {
+		background: var(--electric-blue);
+		color: white;
+		padding: 1rem 2rem;
+		font-weight: 700;
+		text-decoration: none;
+		border-radius: 8px;
+		display: inline-block;
+		border: 2px solid var(--deep-slate);
+		box-shadow: 4px 4px 0px var(--deep-slate);
+		transition: transform 0.2s;
+	}
+
+	.btn-maps:hover {
+		transform: translate(-2px, -2px);
+		box-shadow: 6px 6px 0px var(--deep-slate);
+	}
+
+	@media (max-width: 768px) {
+		.office-content {
+			flex-direction: column;
+			text-align: center;
+			padding: 2rem;
+		}
+
+		.office-text p {
+			margin-left: auto;
+			margin-right: auto;
 		}
 	}
 </style>
