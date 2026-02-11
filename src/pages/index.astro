@@ -425,7 +425,7 @@ const features = [
 
 	.bento-grid {
 		display: grid;
-		grid-template-columns: repeat(12, 1fr);
+		grid-template-columns: 1fr;
 		gap: 1.5rem;
 	}
 
@@ -454,6 +454,9 @@ const features = [
 	}
 
 	@media (min-width: 768px) {
+		.bento-grid {
+			grid-template-columns: repeat(12, 1fr);
+		}
 		.title-card {
 			grid-column: span 3;
 		}
