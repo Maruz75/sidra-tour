@@ -95,8 +95,9 @@ const features = [
 				</h1>
 				<div class="hero-footer">
 					<p>
-						Fokuskan hati untuk beribadah. Biarkan kami urus
-						sisanya. Transparan. Amanah. Sat Set.
+						Fokuskan hati untuk beribadah.<br />
+						Biarkan kami urus sisanya.<br />
+						Transparan. Amanah. Sat Set.
 					</p>
 					<div class="hero-actions">
 						<a href="#paket" class="btn btn-primary"
@@ -314,14 +315,33 @@ const features = [
 		}
 	}
 
+	@media (max-width: 768px) {
+		.marquee-content {
+			animation-duration: 20s; /* Even faster as requested */
+		}
+
+		.marquee-container {
+			top: 58px; /* Sticky below navbar (approx height) */
+			z-index: 100;
+		}
+	}
+
 	/* HERO */
 	.hero {
 		min-height: 85vh;
 		display: flex;
 		align-items: center;
-		background: var(--off-white);
+		background:
+			radial-gradient(
+				circle at 50% 50%,
+				rgba(204, 243, 129, 0.15) 0%,
+				transparent 60%
+			),
+			var(--off-white); /* Subtle glow center */
 		padding-top: 4rem;
 		position: relative;
+		/* overflow: hidden; REMOVED to prevent clipping issues */
+		padding-bottom: 4rem; /* Add padding bottom to separate from next section */
 	}
 
 	.sticker-wrapper {
@@ -353,7 +373,11 @@ const features = [
 	}
 
 	.mega-title {
-		font-size: clamp(4rem, 12vw, 9rem);
+		font-size: clamp(
+			2.5rem,
+			9vw,
+			6.5rem
+		); /* Reduced max size & scaling rate */
 		line-height: 0.9;
 		font-weight: 900;
 		color: var(--deep-slate);
@@ -420,7 +444,7 @@ const features = [
 
 	/* FEATURES BENTO */
 	.features {
-		padding: 6rem 0;
+		padding: 4rem 0; /* Reduced from 6rem */
 		background: white;
 	}
 
@@ -445,7 +469,6 @@ const features = [
 	}
 
 	.title-card {
-		grid-column: span 12;
 		background: var(--electric-blue);
 		color: white;
 		display: flex;
@@ -517,12 +540,12 @@ const features = [
 	.packages {
 		background: var(--deep-slate);
 		color: var(--off-white);
-		padding: 4rem 0; /* Reduced padding */
+		padding: 4rem 0; /* Already 4rem, keeping consistent */
 		overflow: hidden;
 	}
 
 	.section-title {
-		font-size: clamp(2.5rem, 6vw, 5rem); /* Reduced max size */
+		font-size: clamp(2.5rem, 5vw, 4rem); /* Reduced max from 5rem */
 		font-weight: 900;
 		line-height: 0.9;
 		margin-bottom: 3rem;
@@ -695,6 +718,27 @@ const features = [
 	}
 
 	@media (max-width: 768px) {
+		.hero {
+			padding-top: 2rem;
+			min-height: auto;
+			padding-bottom: 6rem;
+		}
+
+		.sticker-wrapper {
+			position: relative;
+			top: auto;
+			right: auto;
+			transform: rotate(-5deg);
+			margin-bottom: 2rem;
+			display: flex;
+			justify-content: center;
+		}
+
+		.sticker {
+			font-size: 0.9rem;
+			padding: 0.75rem 1.5rem;
+		}
+
 		.ticket-card {
 			flex-direction: column;
 		}
@@ -724,26 +768,32 @@ const features = [
 			min-height: 80px;
 		}
 		.mega-title {
-			font-size: 4rem;
+			font-size: 3.5rem;
+			margin-bottom: 1rem;
 		}
 		.hero-footer {
 			flex-direction: column;
 			align-items: stretch;
 			text-align: center;
+			margin-top: 2rem;
+			padding-top: 2rem;
+			gap: 1.5rem;
 		}
 		.hero-footer p {
 			text-align: center;
 			max-width: 100%;
+			font-size: 1rem;
 		}
 		.btn-primary {
 			width: 100%;
 			text-align: center;
+			padding: 1.25rem;
 		}
 	}
 
 	/* CTA */
 	.cta {
-		padding: 6rem 1.5rem;
+		padding: 4rem 1.5rem; /* Reduced from 6rem */
 		background: white;
 	}
 
@@ -785,12 +835,12 @@ const features = [
 	.problem-section {
 		background: #020617; /* Very dark slate */
 		color: white;
-		padding: 6rem 0;
+		padding: 4rem 0; /* Reduced from 6rem */
 		position: relative;
 	}
 
 	.problem-title {
-		font-size: clamp(3rem, 8vw, 6rem);
+		font-size: clamp(2.5rem, 6vw, 4.5rem); /* Reduced from 6rem */
 		line-height: 0.9;
 		font-weight: 900;
 		text-align: center;
@@ -901,8 +951,20 @@ const features = [
 		}
 
 		.title-card {
-			max-width: 100%;
-			width: 100%;
+			background: transparent;
+			border: none;
+			box-shadow: none;
+			min-height: auto;
+			padding: 0;
+			margin-bottom: 2rem;
+			color: var(--deep-slate);
+		}
+
+		.title-card h2 {
+			font-size: 3rem;
+			color: var(--deep-slate);
+			text-align: center;
+			line-height: 0.9;
 		}
 
 		.title-card h2 {
@@ -989,6 +1051,7 @@ const features = [
 			flex-direction: column;
 			text-align: center;
 			padding: 2rem;
+			margin: 0 1rem;
 		}
 
 		.office-text p {

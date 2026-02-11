@@ -119,15 +119,16 @@
     .nav-item.special {
         background: var(--neon-lime);
         color: var(--deep-slate);
-        padding: 0.5rem 1.25rem;
+        padding: 0.5rem 1rem;
         border-radius: 2rem;
         flex-direction: row;
         gap: 0.5rem;
         opacity: 1;
         font-size: 0.9rem;
-        box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
-        margin-top: -1.5rem; /* Pop out effect */
+        box-shadow: none; /* Remove shadow for flat look or keep subtle */
+        margin-top: 0; /* Remove pop out effect */
         border: 2px solid var(--deep-slate);
+        font-weight: 800;
     }
 
     .nav-item.special svg {
