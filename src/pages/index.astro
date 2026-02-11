@@ -1009,16 +1009,16 @@ const features = [
 		}
 		.mega-title {
 			font-size: clamp(
-				2.2rem,
-				11vw,
-				4.5rem
-			); /* Slightly increased as requested */
+				2.5rem,
+				12.5vw,
+				5rem
+			); /* Increased as requested, careful with edges */
 			margin-bottom: 0.25rem;
 			width: 100%;
-			padding: 0; /* Maximize width */
+			padding: 0;
 			word-break: normal;
 			overflow-wrap: normal;
-			letter-spacing: -0.03em; /* Tighten to fit 'ENTHUSIAST' */
+			letter-spacing: -0.04em; /* Squeeze text to fit larger size */
 		}
 		.hero-footer {
 			flex-direction: column;
@@ -1229,16 +1229,13 @@ const features = [
 		}
 
 		.title-card h2 {
-			font-size: 9.5rem; /* Extremely massive as requested */
+			font-size: 17vw; /* Reduced from 23vw to find the sweet spot */
 			color: var(--deep-slate);
 			text-align: center;
-			line-height: 0.75;
-			letter-spacing: -4px;
-		}
-
-		.title-card h2 {
-			font-size: 2rem;
-			word-break: break-word;
+			line-height: 0.8;
+			letter-spacing: -0.05em;
+			margin-bottom: 0.5rem;
+			word-break: break-word; /* Combined rule */
 		}
 	}
 	/* GALLERY SECTION */
