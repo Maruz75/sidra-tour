@@ -99,11 +99,7 @@ const features = [
 						Biarkan kami urus sisanya.<br />
 						Transparan. Amanah. Sat Set.
 					</p>
-					<div class="hero-actions">
-						<a href="#paket" class="btn btn-primary"
-							>LIHAT PAKET ➜</a
-						>
-					</div>
+
 				</div>
 			</div>
 		</section>
@@ -113,7 +109,7 @@ const features = [
 			<div class="container">
 				<h2 class="section-title problem-title">
 					NIAT IBADAH<br /><span class="text-red"
-						>MALAH JALAN-JALAN?</span
+						>MALAH CAPEK JALAN-JALAN?</span
 					>
 				</h2>
 				<div class="problem-grid">
@@ -147,6 +143,8 @@ const features = [
 		</section>
 
 		<!-- Features Bento Grid (The "Solution") -->
+
+
 		<section id="tentang" class="features">
 			<div class="section-divider">
 				<span>TAPI TENANG. INI SOLUSINYA.</span>
@@ -166,6 +164,34 @@ const features = [
 						))
 					}
 				</div>
+			</div>
+		</section>
+
+		<!-- Gallery Section (New!) -->
+		<section class="gallery">
+			<div class="container">
+				<h2 class="section-title gallery-title">
+					OUR KHUSYU'<br />ACTIVITY<span class="dot">!</span>
+				</h2>
+			</div>
+			<div class="scroll-container">
+				{
+					[1, 2, 3, 4, 5, 6].map((i) => (
+						<div class={`photo-card rotate-${i % 2 === 0 ? "right" : "left"}`}>
+							<div class="photo-frame">
+								<img
+									src={`https://placehold.co/400x500/0f172a/FFF?text=Momen+Umroh+${i}`}
+									alt={`Dokumentasi Jamaah ${i}`}
+									loading="lazy"
+								/>
+							</div>
+							<div class="photo-caption">
+								<span>📍 MEKKAH, SAUDI ARABIA</span>
+							</div>
+							<div class="tape"></div>
+						</div>
+					))
+				}
 			</div>
 		</section>
 
@@ -237,8 +263,7 @@ const features = [
 				<div class="office-text">
 					<h2>LEBIH SUKA<br />NGOBROL LANGSUNG?</h2>
 					<p>
-						Yuk mampir ke kantor kami! Ngopi-ngopi santai sambil
-						konsultasi rencana ibadahmu. Tanpa kaku-kaku club.
+						Yuk mampir ke kantor kami. Let's Have a Chat!
 					</p>
 					<a
 						href="https://maps.google.com/?q=Sidra+Tour"
@@ -381,7 +406,7 @@ const features = [
 		line-height: 0.9;
 		font-weight: 900;
 		color: var(--deep-slate);
-		letter-spacing: -0.04em;
+		letter-spacing: 0.01em; /* Increased from -0.04em to prevent overlap */
 		text-align: center;
 		margin-bottom: 2rem;
 	}
@@ -392,6 +417,7 @@ const features = [
 		); /* Filled instead of transparent for better legibility */
 		-webkit-text-stroke: 3px var(--deep-slate);
 		text-shadow: 4px 4px 0px var(--neon-lime); /* Add pop */
+		letter-spacing: 0.04em; /* Extra spacing for outlined text */
 	}
 
 	@media (min-width: 768px) {
@@ -469,12 +495,14 @@ const features = [
 	}
 
 	.title-card {
-		background: var(--electric-blue);
-		color: white;
+		background: transparent !important;
+		color: var(--deep-slate);
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		min-height: 250px;
+		border: none !important;
+		box-shadow: none !important;
 	}
 
 	@media (min-width: 768px) {
@@ -501,7 +529,7 @@ const features = [
 		font-weight: 900;
 		margin: 0;
 		text-align: center;
-		color: white; /* Force white color */
+		color: var(--deep-slate);
 	}
 
 	.feature-0 {
@@ -833,10 +861,11 @@ const features = [
 
 	/* PROBLEM SECTION */
 	.problem-section {
-		background: #020617; /* Very dark slate */
-		color: white;
-		padding: 4rem 0; /* Reduced from 6rem */
+		background: #fecaca; /* Red-200 for "Problem" vibe, not yellow */
+		color: var(--deep-slate);
+		padding: 4rem 0;
 		position: relative;
+		border-bottom: 3px solid var(--deep-slate);
 	}
 
 	.problem-title {
@@ -845,6 +874,7 @@ const features = [
 		font-weight: 900;
 		text-align: center;
 		margin-bottom: 4rem;
+		color: var(--deep-slate); /* Explicit color for white bg */
 	}
 
 	.text-red {
@@ -859,17 +889,17 @@ const features = [
 	}
 
 	.problem-card {
-		background: rgba(255, 255, 255, 0.05);
-		border: 2px solid #334155;
+		background: white;
+		border: 3px solid var(--deep-slate);
 		padding: 2.5rem;
 		border-radius: 1rem;
 		transition: transform 0.2s;
+		box-shadow: 6px 6px 0px var(--deep-slate);
 	}
 
 	.problem-card:hover {
-		transform: translateY(-5px);
-		background: rgba(255, 255, 255, 0.1);
-		border-color: #ff4757;
+		transform: translate(-3px, -3px);
+		box-shadow: 9px 9px 0px var(--deep-slate);
 	}
 
 	.problem-card .icon {
@@ -885,10 +915,11 @@ const features = [
 	}
 
 	.problem-card p {
-		color: #cbd5e1;
+		color: var(--deep-slate);
 		font-size: 1.1rem;
 		line-height: 1.5;
 		margin: 0;
+		font-weight: 500;
 	}
 
 	/* Section Divider */
@@ -972,6 +1003,107 @@ const features = [
 			word-break: break-word;
 		}
 	}
+	/* GALLERY SECTION */
+	.gallery {
+		background: var(--neon-lime);
+		padding: 2rem 0; /* Reduced from 4rem */
+		overflow: hidden;
+		border-bottom: 3px solid var(--deep-slate);
+	}
+
+	.gallery-title {
+		color: var(--deep-slate);
+		margin-bottom: 3rem;
+		text-align: center;
+	}
+
+	.scroll-container {
+		display: flex;
+		gap: 2rem;
+		padding: 2rem 5%; /* Side padding for scroll kickoff */
+		overflow-x: auto;
+		scroll-behavior: smooth;
+		-ms-overflow-style: none; /* Hide Scrollbar IE/Edge */
+		scrollbar-width: none; /* Hide Scrollbar Firefox */
+		padding-bottom: 4rem; /* Space for shadows */
+	}
+
+	.scroll-container::-webkit-scrollbar {
+		display: none; /* Hide Scrollbar Chrome/Safari */
+	}
+
+	.photo-card {
+		flex: 0 0 220px; /* Reduced from 300px */
+		background: white;
+		padding: 0.75rem 0.75rem 2.5rem 0.75rem; /* Reduced padding */
+		border: 3px solid var(--deep-slate);
+		box-shadow: 6px 6px 0px var(--deep-slate);
+		position: relative;
+		transition: transform 0.3s;
+		cursor: grab;
+	}
+
+	.photo-card:hover {
+		transform: scale(1.05) rotate(0deg) !important;
+		z-index: 10;
+		box-shadow: 12px 12px 0px var(--electric-blue);
+	}
+
+	.photo-frame {
+		width: 100%;
+		aspect-ratio: 4/5;
+		background: #e2e8f0;
+		border: 2px solid var(--deep-slate);
+		overflow: hidden;
+		margin-bottom: 1rem;
+	}
+
+	.photo-frame img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.5s;
+	}
+
+	.photo-card:hover img {
+		transform: scale(1.1);
+	}
+
+	.photo-caption {
+		text-align: center;
+		font-weight: 700;
+		font-size: 0.9rem;
+		color: var(--deep-slate);
+		letter-spacing: 0.05em;
+	}
+
+	.tape {
+		position: absolute;
+		top: -15px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 100px;
+		height: 30px;
+		background: rgba(255, 255, 255, 0.4);
+		border: 1px solid rgba(0, 0, 0, 0.1);
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		z-index: 5;
+	}
+
+	.rotate-right {
+		transform: rotate(3deg);
+	}
+
+	.rotate-left {
+		transform: rotate(-3deg);
+	}
+
+	@media (max-width: 768px) {
+		.photo-card {
+			flex: 0 0 260px;
+		}
+	}
+
 	/* OFFICE VISIT SECTION */
 	.office-visit {
 		background: white;
