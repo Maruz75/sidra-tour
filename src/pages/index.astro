@@ -63,7 +63,7 @@ const features = [
 	{
 		icon: "💻",
 		title: "MANASIK ONLINE",
-		desc: "Manasik online, nggak usah di hotel mahal! Lebih efisien, hemat biaya, dan fokus pada materi ilmu.",
+		desc: "Manasik online aja, nggak usah di hotel mahal! Lebih efisien, hemat biaya, dan fokus pada materi ilmu.",
 	},
 	{
 		icon: "🧳",
@@ -85,10 +85,18 @@ const features = [
 		<div class="marquee-container">
 			<div class="marquee-track">
 				<div class="marquee-content">
-					<span>NO GIMMICKS • JUST IBADAH • SIDRA TOUR • 100% TRANSPARAN • NO GIMMICKS • JUST IBADAH • SIDRA TOUR • 100% TRANSPARAN •</span>
+					<span
+						>NO GIMMICKS • JUST IBADAH • SIDRA TOUR • 100%
+						TRANSPARAN • NO GIMMICKS • JUST IBADAH • SIDRA TOUR •
+						100% TRANSPARAN •</span
+					>
 				</div>
 				<div class="marquee-content" aria-hidden="true">
-					<span>NO GIMMICKS • JUST IBADAH • SIDRA TOUR • 100% TRANSPARAN • NO GIMMICKS • JUST IBADAH • SIDRA TOUR • 100% TRANSPARAN •</span>
+					<span
+						>NO GIMMICKS • JUST IBADAH • SIDRA TOUR • 100%
+						TRANSPARAN • NO GIMMICKS • JUST IBADAH • SIDRA TOUR •
+						100% TRANSPARAN •</span
+					>
 				</div>
 			</div>
 		</div>
@@ -107,7 +115,7 @@ const features = [
 				<div class="hero-footer-grid">
 					<div class="footer-item">
 						<span class="icon">🎯</span>
-						<p>Fokuskan hati untuk ibadah.</p>
+						<p>Fokus Ibadah Aja.</p>
 					</div>
 					<div class="footer-item">
 						<span class="icon">🤝</span>
@@ -125,9 +133,9 @@ const features = [
 		<section class="problem-section">
 			<div class="container">
 				<h2 class="section-title problem-title">
-					NIAT IBADAH<br /><span class="text-highlight"
-						>MALAH CAPEK JALAN-JALAN?</span
-					>
+					NIAT IBADAH<br />
+					<span class="text-highlight mb-gap">MALAH CAPEK</span><br />
+					<span class="text-highlight">JALAN-JALAN?</span>
 				</h2>
 				<div class="problem-grid">
 					<div class="problem-card">
@@ -140,7 +148,8 @@ const features = [
 						<h3>KEBANYAKAN SHOPPING</h3>
 						<p>
 							Niat hati mau khusyuk, malah diajak keliling toko
-							oleh-oleh seharian. Capek di jalan, waktu umroh malah capek.
+							oleh-oleh seharian. Capek di jalan, waktu umroh
+							malah capek.
 						</p>
 					</div>
 					<div class="problem-card">
@@ -152,8 +161,8 @@ const features = [
 						/>
 						<h3>CITY TOUR GA PENTING</h3>
 						<p>
-							Ke peternakan unta, ke museum ini itu. Padahal
-							cuma pengen tenang ibadah di Masjidil Haram & Nabawi.
+							Ke peternakan unta, ke museum ini itu. Padahal cuma
+							pengen tenang ibadah di Masjidil Haram & Nabawi.
 						</p>
 					</div>
 					<div class="problem-card">
@@ -166,7 +175,7 @@ const features = [
 						<h3>SHOLAT KETETERAN</h3>
 						<p>
 							Sering telat ke masjid gara-gara macet pas city tour
-							yang sebenernya ga wajib. Sayang banget waktunya.
+							yang sebenernya ga wajib? Sayang banget pahalanya!
 						</p>
 					</div>
 				</div>
@@ -174,7 +183,6 @@ const features = [
 		</section>
 
 		<!-- Features Bento Grid (The "Solution") -->
-
 
 		<section id="tentang" class="features">
 			<div class="section-divider">
@@ -208,7 +216,9 @@ const features = [
 			<div class="scroll-container">
 				{
 					[1, 2, 3, 4, 5, 6].map((i) => (
-						<div class={`photo-card rotate-${i % 2 === 0 ? "right" : "left"}`}>
+						<div
+							class={`photo-card rotate-${i % 2 === 0 ? "right" : "left"}`}
+						>
 							<div class="photo-frame">
 								<img
 									src={`https://placehold.co/400x500/0f172a/FFF?text=Momen+Umroh+${i}`}
@@ -219,7 +229,7 @@ const features = [
 							<div class="photo-caption">
 								<span>📍 MEKKAH, SAUDI ARABIA</span>
 							</div>
-							<div class="tape"></div>
+							<div class="tape" />
 						</div>
 					))
 				}
@@ -230,9 +240,7 @@ const features = [
 		<section id="paket" class="packages">
 			<div class="container">
 				<h2 class="section-title">
-					PILIH<span class="dot">.</span><br />PAKET<span class="dot"
-						>.</span
-					>
+					PILIH<br />PAKETMU<span class="dot">.</span>
 				</h2>
 
 				<div class="packages-grid">
@@ -295,24 +303,22 @@ const features = [
 			</div>
 		</section>
 
-
-
 		<!-- Contact Section (Merged) -->
 		<section id="kontak" class="office-visit">
 			<div class="container office-content">
 				<!-- CTA Part -->
 				<div class="cta-merged">
-					<h2>BERANGKAAAT?</h2>
-					<a href="https://wa.me/6281234567890" class="btn-whatsapp">WHATSAPP KAMI SEKARANG</a>
+					<h2>BERANGKAAAT!</h2>
+					<a href="https://wa.me/6281234567890" class="btn-whatsapp"
+						>WHATSAPP KAMI SEKARANG</a
+					>
 				</div>
 
 				<!-- Office Part -->
 				<div class="office-row">
 					<div class="office-text">
 						<h2>LEBIH SUKA<br />NGOBROL LANGSUNG?</h2>
-						<p>
-							Yuk mampir ke kantor kami. Let's Have a Chat!
-						</p>
+						<p>Yuk mampir ke kantor kami. Let's Have a Chat!</p>
 						<a
 							href="https://maps.google.com/?q=Sidra+Tour"
 							target="_blank"
@@ -352,6 +358,14 @@ const features = [
 	/* VARIABLES inherited from Layout */
 
 	/* GLOBAL UTILS */
+	main {
+		width: 100%;
+		max-width: 100%;
+		overflow-x: hidden;
+		display: flex;
+		flex-direction: column;
+	}
+
 	.container {
 		max-width: 1200px;
 		margin: 0 auto;
@@ -363,6 +377,8 @@ const features = [
 		background: var(--neon-lime);
 		color: var(--deep-slate);
 		overflow: hidden;
+		width: 100%;
+		max-width: 100%;
 		padding: 0.75rem 0;
 		font-weight: 900;
 		font-size: 1.2rem;
@@ -385,7 +401,7 @@ const features = [
 		white-space: nowrap;
 		padding-right: 2rem; /* Gap between contents */
 	}
-	
+
 	.marquee-content span {
 		display: inline-block;
 	}
@@ -395,13 +411,17 @@ const features = [
 			transform: translateX(0);
 		}
 		100% {
-			transform: translateX(-50%); /* Move half of track (one content width) */
+			transform: translateX(
+				-50%
+			); /* Move half of track (one content width) */
 		}
 	}
 
 	@media (max-width: 768px) {
 		.marquee-container {
-			top: 58px;
+			position: relative; /* Disable sticky on mobile to prevent misalignment */
+			top: auto;
+			z-index: 1;
 		}
 	}
 
@@ -478,11 +498,15 @@ const features = [
 	.outline-text {
 		color: var(--off-white);
 		/* Simulated stroke using text-shadow to fix font overlap artifacts */
-		text-shadow: 
-			3px 0 0 var(--deep-slate), -3px 0 0 var(--deep-slate),
-			0 3px 0 var(--deep-slate), 0 -3px 0 var(--deep-slate),
-			2px 2px 0 var(--deep-slate), -2px -2px 0 var(--deep-slate),
-			2px -2px 0 var(--deep-slate), -2px 2px 0 var(--deep-slate),
+		text-shadow:
+			3px 0 0 var(--deep-slate),
+			-3px 0 0 var(--deep-slate),
+			0 3px 0 var(--deep-slate),
+			0 -3px 0 var(--deep-slate),
+			2px 2px 0 var(--deep-slate),
+			-2px -2px 0 var(--deep-slate),
+			2px -2px 0 var(--deep-slate),
+			-2px 2px 0 var(--deep-slate),
 			6px 6px 0px var(--neon-lime); /* Pop shadow */
 		letter-spacing: 0.08em;
 	}
@@ -535,7 +559,7 @@ const features = [
 		color: var(--deep-slate);
 	}
 
-    /* .btn-hero styles removed */
+	/* .btn-hero styles removed */
 
 	.btn-primary {
 		background: var(--deep-slate);
@@ -738,7 +762,7 @@ const features = [
 		transform: rotate(180deg);
 		font-size: 0.65rem;
 		font-weight: 800;
-		color: rgba(0,0,0,0.3); /* Subtle dark on light bg */
+		color: rgba(0, 0, 0, 0.3); /* Subtle dark on light bg */
 		letter-spacing: 0.1em;
 		padding: 1rem 0;
 		border-left: 1px dashed var(--deep-slate);
@@ -874,6 +898,8 @@ const features = [
 			padding-top: 2rem;
 			min-height: auto;
 			padding-bottom: 6rem;
+			padding-left: 1rem; /* Added padding to prevent edge touching */
+			padding-right: 1rem;
 		}
 
 		.sticker-wrapper {
@@ -896,32 +922,77 @@ const features = [
 		}
 		.ticket-left {
 			flex: 0 0 auto;
-			min-height: 60px;
+			min-height: auto;
 			border-right: none;
 			border-bottom: 3px dashed var(--deep-slate);
 			width: 100%;
+			padding: 1rem;
 		}
 		.ticket-left::after,
 		.ticket-left::before {
 			display: none;
 		} /* Simplify for mobile for now or adjust positioning */
-		.ticket-stub {
-			flex-direction: row;
+		.ticket-left {
+			flex: 0 0 auto;
+			min-height: auto;
+			border-right: none;
+			border-bottom: 3px dashed var(--deep-slate);
 			width: 100%;
-			height: auto;
-			padding: 0.5rem;
-			gap: 1rem;
+			padding: 1rem;
+			display: flex;
+			flex-direction: column; /* Stack vertically: Label then Logos */
+			gap: 0.5rem;
 		}
 
 		.vertical-label {
 			writing-mode: horizontal-tb;
 			transform: none;
-			padding: 0.5rem 0;
+			padding: 0;
 			border-left: none;
-			border-top: 1px dashed rgba(0,0,0,0.3);
+			border-top: none;
 			margin: 0;
 			width: 100%;
-			font-size: 0.6rem;
+			font-size: 0.8rem;
+			text-align: center;
+			color: var(--deep-slate); /* Text color matches new bg */
+			order: 1; /* Label first */
+			font-weight: 800; /* Ensure readability */
+		}
+
+		.ticket-stub {
+			flex-direction: row;
+			width: 100%;
+			height: auto;
+			padding: 0;
+			gap: 1rem; /* Space between logos */
+			background: transparent;
+			align-items: center;
+			justify-content: center;
+			order: 2; /* Logos second */
+		}
+
+		.airline-list {
+			display: flex;
+			flex-direction: row;
+			padding: 0;
+			gap: 1rem;
+			width: auto;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.airline-logo {
+			width: 50px;
+			max-width: none;
+			height: auto;
+			background: transparent; /* No white box needed anymore */
+			padding: 4px;
+			border-radius: 4px;
+		}
+		/* Ensure ticket-left background is dark for contrast if needed, or rely on .ticket-card */
+		.ticket-left {
+			background: #f1f5f9; /* Lighter slate/grey background for distinction */
+			color: var(--deep-slate); /* Text color needs to be dark now */
 		}
 
 		.ticket-right {
@@ -937,8 +1008,17 @@ const features = [
 			letter-spacing: 0.2rem;
 		}
 		.mega-title {
-			font-size: 3.5rem;
-			margin-bottom: 1rem;
+			font-size: clamp(
+				2.2rem,
+				11vw,
+				4.5rem
+			); /* Slightly increased as requested */
+			margin-bottom: 0.25rem;
+			width: 100%;
+			padding: 0; /* Maximize width */
+			word-break: normal;
+			overflow-wrap: normal;
+			letter-spacing: -0.03em; /* Tighten to fit 'ENTHUSIAST' */
 		}
 		.hero-footer {
 			flex-direction: column;
@@ -1025,7 +1105,10 @@ const features = [
 
 	.problem-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); /* Slightly reduced min-width */
+		grid-template-columns: repeat(
+			auto-fit,
+			minmax(260px, 1fr)
+		); /* Slightly reduced min-width */
 		gap: 2rem;
 	}
 
@@ -1050,7 +1133,8 @@ const features = [
 		height: 200px; /* Fixed height for consistency */
 		object-fit: cover;
 		border-radius: 0.5rem;
-		margin-bottom: 3.5rem;
+		border-radius: 0.5rem;
+		margin-bottom: 1.5rem; /* Reduced from 3.5rem to bring text closer */
 		border: 2px solid var(--deep-slate);
 	}
 
@@ -1098,9 +1182,14 @@ const features = [
 		}
 
 		.problem-title {
-			font-size: 2.25rem; /* Smaller title on mobile */
+			font-size: 1.7rem; /* Smaller title on mobile to prevent wrapping */
 			margin-bottom: 2rem;
 			padding: 0 0.5rem; /* Prevent text touching edges */
+		}
+
+		.problem-title span.mb-gap {
+			display: inline-block;
+			margin-top: 0.5rem; /* Adjusted gap */
 		}
 
 		.problem-grid {
@@ -1140,10 +1229,11 @@ const features = [
 		}
 
 		.title-card h2 {
-			font-size: 3rem;
+			font-size: 9.5rem; /* Extremely massive as requested */
 			color: var(--deep-slate);
 			text-align: center;
-			line-height: 0.9;
+			line-height: 0.75;
+			letter-spacing: -4px;
 		}
 
 		.title-card h2 {
@@ -1170,6 +1260,8 @@ const features = [
 		gap: 2rem;
 		padding: 2rem 5%; /* Side padding for scroll kickoff */
 		overflow-x: auto;
+		width: 100%;
+		max-width: 100%;
 		scroll-behavior: smooth;
 		-ms-overflow-style: none; /* Hide Scrollbar IE/Edge */
 		scrollbar-width: none; /* Hide Scrollbar Firefox */
@@ -1282,6 +1374,14 @@ const features = [
 		font-weight: 900;
 		margin-bottom: 1.5rem;
 		color: var(--deep-slate);
+		word-break: break-word; /* Prevent overflow */
+	}
+
+	@media (max-width: 768px) {
+		.cta-merged h2 {
+			font-size: 1.8rem; /* Further reduced to ensure single line for 'BERANGKAAAT!' */
+			word-wrap: normal;
+		}
 	}
 
 	.office-row {
@@ -1309,7 +1409,8 @@ const features = [
 	}
 
 	.office-decor {
-		display: none;
+		display: block; /* Show on mobile by default */
+		margin-top: 2rem;
 	}
 
 	.office-decor img {
@@ -1372,7 +1473,6 @@ const features = [
 		}
 	}
 
-
 	.floating-wa {
 		position: fixed;
 		bottom: 2rem;
@@ -1397,5 +1497,11 @@ const features = [
 	.floating-wa img {
 		width: 35px;
 		height: 35px;
+	}
+
+	@media (max-width: 768px) {
+		.floating-wa {
+			display: none;
+		}
 	}
 </style>

@@ -87,9 +87,10 @@
 
     .logo-img {
         position: absolute;
-        top: -15px; /* Pull up to center/hang */
-        left: 0;
-        height: 75px; /* Large visible logo */
+        top: 0; /* Align with top edge to prevent cutoff */
+        left: 50%;
+        transform: translateX(-50%);
+        height: 80px; /* Slightly reduced for fit */
         width: auto;
     }
 

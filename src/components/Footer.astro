@@ -5,7 +5,11 @@ const currentYear = new Date().getFullYear();
 <footer class="site-footer">
     <div class="container footer-grid">
         <div class="footer-brand">
-            <img src="/Sidra Tour.png" alt="Sidra Tour Logo" class="footer-logo-img" />
+            <img
+                src="/Sidra Tour.png"
+                alt="Sidra Tour Logo"
+                class="footer-logo-img"
+            />
             <p>Travel Umroh Tanpa Gimik.<br />Fokus Ibadah, Hati Tenang.</p>
         </div>
 
@@ -56,9 +60,10 @@ const currentYear = new Date().getFullYear();
     }
 
     .footer-logo-img {
-        max-width: 100px; /* Reduced from 150px */
+        width: 120px; /* Fixed width */
         height: auto;
         margin-bottom: 1.5rem;
+        object-fit: contain;
     }
 
     .footer-brand p {
@@ -176,6 +181,11 @@ const currentYear = new Date().getFullYear();
 
         .footer-brand h2 {
             font-size: 3rem;
+        }
+
+        .footer-logo-img {
+            width: 140px; /* Increased from 100px */
+            max-width: 100%;
         }
 
         .footer-link-group h3,
