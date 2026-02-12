@@ -220,36 +220,6 @@ const features = [
 		</div>
 	</section>
 
-	<!-- Gallery Section (New!) -->
-	<section class="gallery">
-		<div class="container">
-			<h2 class="section-title gallery-title">
-				OUR KHUSYU'<br />ACTIVITY<span class="dot">!</span>
-			</h2>
-		</div>
-		<div class="scroll-container">
-			{
-				[1, 2, 3, 4, 5, 6].map((i) => (
-					<div
-						class={`photo-card rotate-${i % 2 === 0 ? "right" : "left"}`}
-					>
-						<div class="photo-frame">
-							<img
-								src={`https://placehold.co/400x500/0f172a/FFF?text=Momen+Umroh+${i}`}
-								alt={`Dokumentasi Jamaah ${i}`}
-								loading="lazy"
-							/>
-						</div>
-						<div class="photo-caption">
-							<span>📍 MEKKAH, SAUDI ARABIA</span>
-						</div>
-						<div class="tape" />
-					</div>
-				))
-			}
-		</div>
-	</section>
-
 	<!-- Packages (Horizontal Scroll / Stack vibe) -->
 	<section id="paket" class="packages">
 		<div class="container">
@@ -314,6 +284,36 @@ const features = [
 					))
 				}
 			</div>
+		</div>
+	</section>
+
+	<!-- Gallery Section (New!) -->
+	<section class="gallery">
+		<div class="container">
+			<h2 class="section-title gallery-title">
+				OUR KHUSYU'<br />ACTIVITY<span class="dot">!</span>
+			</h2>
+		</div>
+		<div class="scroll-container">
+			{
+				[1, 2, 3, 4, 5, 6].map((i) => (
+					<div
+						class={`photo-card rotate-${i % 2 === 0 ? "right" : "left"}`}
+					>
+						<div class="photo-frame">
+							<img
+								src={`https://placehold.co/400x500/0f172a/FFF?text=Momen+Umroh+${i}`}
+								alt={`Dokumentasi Jamaah ${i}`}
+								loading="lazy"
+							/>
+						</div>
+						<div class="photo-caption">
+							<span>📍 MEKKAH, SAUDI ARABIA</span>
+						</div>
+						<div class="tape" />
+					</div>
+				))
+			}
 		</div>
 	</section>
 
