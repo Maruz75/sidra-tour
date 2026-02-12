@@ -263,4 +263,37 @@
             border-bottom: 2px solid var(--deep-slate);
         }
     }
+
+    /* Desktop Scaling */
+    @media (min-width: 1024px) {
+        nav {
+            padding: 1rem 3rem; /* Slightly reduced */
+        }
+
+        .nav-container {
+            max-width: 1560px; /* Keep container width */
+        }
+
+        .logo {
+            width: 160px; /* Reduced */
+            height: 50px;
+        }
+
+        .logo-img {
+            height: 85px; /* Reduced from 100px */
+        }
+
+        .nav-links {
+            gap: 3rem; /* Reduced from 4rem */
+        }
+
+        .nav-links a {
+            font-size: 1.1rem; /* Reduced from 1.25rem */
+        }
+
+        .btn-nav {
+            font-size: 1.1rem;
+            padding: 0.8rem 2rem; /* Reduced padding */
+        }
+    }
 </style>
