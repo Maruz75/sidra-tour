@@ -58,7 +58,7 @@ const features = [
 	{
 		icon: "🚫",
 		title: "NO DRAMA",
-		desc: "Nggak ada city tour yang ga penting. Kita fokus ibadah, bukan shopping.",
+		desc: "Nggak ada city tour yang ga penting. Kita fokus ibadah 100%.",
 	},
 	{
 		icon: "💻",
@@ -145,11 +145,10 @@ const features = [
 							class="problem-img"
 							loading="lazy"
 						/>
-						<h3>KEBANYAKAN SHOPPING</h3>
+						<h3>ENERGI HABIS</h3>
 						<p>
 							Niat hati mau khusyuk, malah diajak keliling toko
-							oleh-oleh seharian. Capek di jalan, waktu umroh
-							malah capek.
+							oleh-oleh seharian. Waktu umroh udah capek duluan.
 						</p>
 					</div>
 					<div class="problem-card">
@@ -182,174 +181,188 @@ const features = [
 			</div>
 		</section>
 
-		<!-- Features Bento Grid (The "Solution") -->
-
-		<section id="tentang" class="features">
-			<div class="section-divider">
-				<span>TAPI TENANG. INI SOLUSINYA.</span>
-			</div>
-			<div class="container">
-				<div class="bento-grid">
-					<div class="bento-item title-card">
-						<h2>GA PERLU<br />GIMIK.</h2>
-					</div>
-					{
-						features.map((feature, index) => (
-							<div class={`bento-item feature-${index}`}>
-								<div class="icon-box">{feature.icon}</div>
-								<h3>{feature.title}</h3>
-								<p>{feature.desc}</p>
-							</div>
-						))
-					}
+		<!-- Introduction Section (The Bridge) -->
+		<section class="introduction">
+			<div class="container text-center">
+				<p class="intro-text">Introducing</p>
+				<div class="intro-logo">
+					<img
+						src="/Sidra Tour.png"
+						alt="Sidra Tour"
+						class="intro-logo-img"
+					/>
 				</div>
-			</div>
-		</section>
-
-		<!-- Gallery Section (New!) -->
-		<section class="gallery">
-			<div class="container">
-				<h2 class="section-title gallery-title">
-					OUR KHUSYU'<br />ACTIVITY<span class="dot">!</span>
-				</h2>
-			</div>
-			<div class="scroll-container">
-				{
-					[1, 2, 3, 4, 5, 6].map((i) => (
-						<div
-							class={`photo-card rotate-${i % 2 === 0 ? "right" : "left"}`}
-						>
-							<div class="photo-frame">
-								<img
-									src={`https://placehold.co/400x500/0f172a/FFF?text=Momen+Umroh+${i}`}
-									alt={`Dokumentasi Jamaah ${i}`}
-									loading="lazy"
-								/>
-							</div>
-							<div class="photo-caption">
-								<span>📍 MEKKAH, SAUDI ARABIA</span>
-							</div>
-							<div class="tape" />
-						</div>
-					))
-				}
-			</div>
-		</section>
-
-		<!-- Packages (Horizontal Scroll / Stack vibe) -->
-		<section id="paket" class="packages">
-			<div class="container">
-				<h2 class="section-title">
-					PILIH<br />PAKETMU<span class="dot">.</span>
-				</h2>
-
-				<div class="packages-grid">
-					{
-						packages.map((pkg, i) => (
-							<div
-								class={`ticket-card ${pkg.highlight ? "highlight" : ""}`}
-							>
-								<div class="ticket-left">
-									<div class="ticket-stub airline-list">
-										<img
-											src="/Garuda%20Indonesia.svg"
-											alt="Garuda Indonesia"
-											class="airline-logo"
-											loading="lazy"
-										/>
-										<img
-											src="/Malaysia%20Airlines.svg"
-											alt="Malaysia Airlines"
-											class="airline-logo"
-											loading="lazy"
-										/>
-										<img
-											src="/saudia%20airlines.svg"
-											alt="Saudia Airlines"
-											class="airline-logo"
-											loading="lazy"
-										/>
-									</div>
-									<div class="vertical-label">
-										<span>FULL SERVICE AIRLINES ONLY</span>
-									</div>
-								</div>
-								<div class="ticket-content">
-									<div class="ticket-header">
-										<span class="pkg-type">UMROH TRIP</span>
-										<h3>{pkg.title}</h3>
-										<div class="pkg-price">{pkg.price}</div>
-									</div>
-									<div class="ticket-body">
-										<div class="features-list">
-											{pkg.features.map((f) => (
-												<span>✓ {f}</span>
-											))}
-										</div>
-									</div>
-								</div>
-								<div class="ticket-right">
-									<a
-										href="https://wa.me/6281234567890"
-										class="btn-book"
-									>
-										BOOK
-									</a>
-								</div>
-							</div>
-						))
-					}
-				</div>
-			</div>
-		</section>
-
-		<!-- Contact Section (Merged) -->
-		<section id="kontak" class="office-visit">
-			<div class="container office-content">
-				<!-- CTA Part -->
-				<div class="cta-merged">
-					<h2>BERANGKAAAT!</h2>
-					<a href="https://wa.me/6281234567890" class="btn-whatsapp"
-						>WHATSAPP KAMI SEKARANG</a
-					>
-				</div>
-
-				<!-- Office Part -->
-				<div class="office-row">
-					<div class="office-text">
-						<h2>LEBIH SUKA<br />NGOBROL LANGSUNG?</h2>
-						<p>Yuk mampir ke kantor kami. Let's Have a Chat!</p>
-						<a
-							href="https://maps.google.com/?q=Sidra+Tour"
-							target="_blank"
-							class="btn-maps"
-						>
-							📍 LIHAT LOKASI DI MAPS
-						</a>
-					</div>
-					<div class="office-decor">
-						<img src="/cs-team.png" alt="Tim CS Sidra Tour" />
-					</div>
-				</div>
+				<div class="intro-badge">#UmrohTanpaGimik</div>
 			</div>
 		</section>
 	</main>
 
-	<Footer />
+	<!-- Features Bento Grid (The "Solution") -->
+	<section id="tentang" class="features">
+		<div class="section-divider">
+			<span>INI SOLUSINYA.</span>
+		</div>
+		<div class="container">
+			<div class="bento-grid">
+				<div class="bento-item title-card">
+					<h2>GA PERLU<br />GIMIK.</h2>
+				</div>
+				{
+					features.map((feature, index) => (
+						<div class={`bento-item feature-${index}`}>
+							<div class="icon-box">{feature.icon}</div>
+							<h3>{feature.title}</h3>
+							<p>{feature.desc}</p>
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</section>
 
-	<!-- Floating WhatsApp Button -->
-	<a
-		href="https://wa.me/6281234567890"
-		class="floating-wa"
-		target="_blank"
-		aria-label="Chat WhatsApp"
-	>
-		<img
-			src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-			alt="WhatsApp"
-		/>
-	</a>
+	<!-- Gallery Section (New!) -->
+	<section class="gallery">
+		<div class="container">
+			<h2 class="section-title gallery-title">
+				OUR KHUSYU'<br />ACTIVITY<span class="dot">!</span>
+			</h2>
+		</div>
+		<div class="scroll-container">
+			{
+				[1, 2, 3, 4, 5, 6].map((i) => (
+					<div
+						class={`photo-card rotate-${i % 2 === 0 ? "right" : "left"}`}
+					>
+						<div class="photo-frame">
+							<img
+								src={`https://placehold.co/400x500/0f172a/FFF?text=Momen+Umroh+${i}`}
+								alt={`Dokumentasi Jamaah ${i}`}
+								loading="lazy"
+							/>
+						</div>
+						<div class="photo-caption">
+							<span>📍 MEKKAH, SAUDI ARABIA</span>
+						</div>
+						<div class="tape" />
+					</div>
+				))
+			}
+		</div>
+	</section>
+
+	<!-- Packages (Horizontal Scroll / Stack vibe) -->
+	<section id="paket" class="packages">
+		<div class="container">
+			<h2 class="section-title">
+				PILIH<br />PAKETMU<span class="dot">.</span>
+			</h2>
+
+			<div class="packages-grid">
+				{
+					packages.map((pkg, i) => (
+						<div
+							class={`ticket-card ${pkg.highlight ? "highlight" : ""}`}
+						>
+							<div class="ticket-left">
+								<div class="ticket-stub airline-list">
+									<img
+										src="/Garuda%20Indonesia.svg"
+										alt="Garuda Indonesia"
+										class="airline-logo"
+										loading="lazy"
+									/>
+									<img
+										src="/Malaysia%20Airlines.svg"
+										alt="Malaysia Airlines"
+										class="airline-logo"
+										loading="lazy"
+									/>
+									<img
+										src="/saudia%20airlines.svg"
+										alt="Saudia Airlines"
+										class="airline-logo"
+										loading="lazy"
+									/>
+								</div>
+								<div class="vertical-label">
+									<span>FULL SERVICE AIRLINES ONLY</span>
+								</div>
+							</div>
+							<div class="ticket-content">
+								<div class="ticket-header">
+									<span class="pkg-type">UMROH TRIP</span>
+									<h3>{pkg.title}</h3>
+									<div class="pkg-price">{pkg.price}</div>
+								</div>
+								<div class="ticket-body">
+									<div class="features-list">
+										{pkg.features.map((f) => (
+											<span>✓ {f}</span>
+										))}
+									</div>
+								</div>
+							</div>
+							<div class="ticket-right">
+								<a
+									href="https://wa.me/6281234567890"
+									class="btn-book"
+								>
+									BOOK
+								</a>
+							</div>
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<!-- Contact Section (Merged) -->
+	<section id="kontak" class="office-visit">
+		<div class="container office-content">
+			<!-- CTA Part -->
+			<div class="cta-merged">
+				<h2>BERANGKAAAT!</h2>
+				<a href="https://wa.me/6281234567890" class="btn-whatsapp"
+					>WHATSAPP KAMI SEKARANG</a
+				>
+			</div>
+
+			<!-- Office Part -->
+			<div class="office-row">
+				<div class="office-text">
+					<h2>LEBIH SUKA<br />NGOBROL LANGSUNG?</h2>
+					<p>Yuk mampir ke kantor kami. Let's Have a Chat!</p>
+					<a
+						href="https://maps.google.com/?q=Sidra+Tour"
+						target="_blank"
+						class="btn-maps"
+					>
+						📍 LIHAT LOKASI DI MAPS
+					</a>
+				</div>
+				<div class="office-decor">
+					<img src="/cs-team.png" alt="Tim CS Sidra Tour" />
+				</div>
+			</div>
+		</div>
+	</section>
 </Layout>
+
+<Footer />
+
+<!-- Floating WhatsApp Button -->
+<a
+	href="https://wa.me/6281234567890"
+	class="floating-wa"
+	target="_blank"
+	aria-label="Chat WhatsApp"
+>
+	<img
+		src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+		alt="WhatsApp"
+	/>
+</a>
 
 <style>
 	/* VARIABLES */
@@ -445,8 +458,8 @@ const features = [
 
 	.sticker-wrapper {
 		position: absolute;
-		top: 12%; /* Moved up slightly */
-		right: 22%; /* Moved left (more center) */
+		top: -45px; /* Adjusted to be closer but not crashing */
+		right: 5%;
 		transform: rotate(15deg);
 		z-index: 10;
 	}
@@ -486,6 +499,7 @@ const features = [
 	}
 
 	.hero-content {
+		position: relative; /* Create anchor point for absolute children */
 		text-align: center;
 		width: 100%;
 		display: flex;
@@ -599,6 +613,79 @@ const features = [
 		border-radius: 1rem;
 		box-shadow: 6px 6px 0px var(--deep-slate);
 		transition: transform 0.2s;
+	}
+
+	/* INTRODUCTION SECTION */
+	.introduction {
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: var(--off-white);
+		background-image: radial-gradient(
+			circle at center,
+			rgba(204, 243, 129, 0.2) 0%,
+			transparent 70%
+		);
+		position: relative;
+		overflow: hidden;
+	}
+
+	.introduction::before {
+		display: none; /* Remove the old border line */
+	}
+
+	.introduction .text-center {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 0;
+		z-index: 2;
+	}
+
+	.intro-text {
+		font-size: clamp(1.5rem, 5vw, 3rem);
+		font-weight: 900;
+		color: var(--deep-slate);
+		margin: 0;
+		margin-bottom: -2rem; /* Dramatic overlap */
+		letter-spacing: 0.2em;
+		text-transform: uppercase;
+		position: relative;
+		z-index: 10;
+		text-shadow: 4px 4px 0px var(--off-white); /* Outline effect for contrast */
+	}
+
+	.intro-logo-img {
+		height: clamp(250px, 50vh, 600px); /* MASSIVE responsive size */
+		width: auto;
+		margin-bottom: 3rem;
+		filter: drop-shadow(5px 5px 0px rgba(15, 23, 42, 0.1)); /* Pop shadow */
+		transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+	}
+
+	.intro-logo-img:hover {
+		transform: scale(1.05) rotate(2deg);
+	}
+
+	.intro-badge {
+		background: var(--electric-blue);
+		color: white;
+		padding: 1rem 4rem; /* Huge padding */
+		border-radius: 100px;
+		font-weight: 900;
+		font-size: clamp(1.2rem, 3vw, 2rem); /* Responsive large font */
+		transform: rotate(-3deg);
+		box-shadow: 8px 8px 0px var(--deep-slate); /* Thicker shadow */
+		border: 4px solid var(--deep-slate); /* Thicker border */
+		transition: transform 0.3s ease;
+		cursor: pointer;
+	}
+
+	.intro-badge:hover {
+		transform: rotate(0deg) scale(1.1);
+		box-shadow: 12px 12px 0px var(--deep-slate);
 	}
 
 	.bento-item:hover {
@@ -1500,5 +1587,68 @@ const features = [
 		.floating-wa {
 			display: none;
 		}
+	}
+	@media (min-width: 1024px) {
+		/* Scale up Features section ~30% for Desktop */
+		.features .container {
+			max-width: 1560px; /* 1200px * 1.3 */
+		}
+
+		.features {
+			padding: 5.2rem 0; /* 4rem * 1.3 */
+		}
+
+		.features .section-divider {
+			margin-bottom: 5.2rem;
+		}
+
+		.features .section-divider span {
+			font-size: 1.6rem; /* 1.2rem * 1.3 */
+			padding: 0.65rem 2rem;
+		}
+
+		.features .bento-grid {
+			gap: 2rem; /* 1.5rem * 1.33 */
+		}
+
+		.features .bento-item {
+			padding: 2.6rem; /* 2rem * 1.3 */
+			border-width: 4px; /* Scaled border slightly */
+			box-shadow: 8px 8px 0px var(--deep-slate);
+		}
+
+		.features .bento-item:hover {
+			box-shadow: 12px 12px 0px var(--deep-slate);
+		}
+
+		.features .title-card h2 {
+			font-size: clamp(3.25rem, 6.5vw, 5.2rem); /* Scaled clamp */
+		}
+
+		.features .icon-box {
+			font-size: 4rem; /* 3rem * 1.33 */
+			margin-bottom: 2.6rem;
+		}
+
+		.features .bento-item h3 {
+			font-size: 1.8rem; /* 1.35rem * 1.33 */
+			margin: 1.3rem 0;
+		}
+
+		.features .bento-item p {
+			font-size: 1.45rem; /* 1.1rem * 1.32 */
+		}
+
+		/* Gallery Align Middle */
+		.scroll-container {
+			align-items: center;
+			justify-content: center; /* Try center if it fits, scroll otherwise */
+			padding-top: 4rem;
+			padding-bottom: 4rem;
+			min-height: 500px;
+		}
+
+		/* If width overflows, let justify-content be safe -> not supported widely, so ensure padding handles it */
+		/* For very large screens, centering looks good. For 1024px, we rely on overflow-x: auto */
 	}
 </style>
