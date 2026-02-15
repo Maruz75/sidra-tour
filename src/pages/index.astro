@@ -296,19 +296,23 @@ const features = [
 		</div>
 		<div class="scroll-container">
 			{
-				[1, 2, 3, 4, 5, 6].map((i) => (
+				[
+					"/Dokumentasi%20Jamaah%20Umroh%20Sidra.jpg",
+					"/Dokumentasi%20Jamaah%20Umroh%20Sidra%20(2).jpg",
+					"/Dokumentasi%20Jamaah%20Umroh%20Sidra%20(3).jpg",
+					"/Dokumentasi%20Jamaah%20Umroh%20Sidra%20(4).jpg",
+					"/Dokumentasi%20Jamaah%20Umroh%20Sidra%20(5).jpg",
+					"/Dokumentasi%20Jamaah%20Umroh%20Sidra%20(6).jpg",
+				].map((src, i) => (
 					<div
 						class={`photo-card rotate-${i % 2 === 0 ? "right" : "left"}`}
 					>
 						<div class="photo-frame">
 							<img
-								src={`https://placehold.co/400x500/0f172a/FFF?text=Momen+Umroh+${i}`}
-								alt={`Dokumentasi Jamaah ${i}`}
+								src={src}
+								alt={`Dokumentasi Jamaah ${i + 1}`}
 								loading="lazy"
 							/>
-						</div>
-						<div class="photo-caption">
-							<span>📍 MEKKAH, SAUDI ARABIA</span>
 						</div>
 						<div class="tape" />
 					</div>
